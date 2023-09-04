@@ -45,18 +45,19 @@
 
     &__item {
         width: 100%;
-        position: relative;
+     
        
     }
 
     // .spollers-menu__title
 
     &__title {
-        width: 100%;
+       
         display: flex;
         align-items: center;
         flex-direction: row-reverse;
-        padding: rem(16) rem(51);
+        // padding: rem(0) rem(51);
+        line-height: 250%;
         &::before {
             font-size: rem(10);
             margin-left: rem(8);
@@ -81,8 +82,8 @@
         color: $blackColor;
         font-size: rem(16);
         font-weight: 400;
-        top: rem(51);
-        // bottom: 0;
+        top: 100%;
         left: 0;
+        z-index: 5;
     }
 }
