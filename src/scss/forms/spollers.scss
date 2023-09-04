@@ -57,7 +57,7 @@
         align-items: center;
         flex-direction: row-reverse;
         // padding: rem(0) rem(51);
-        line-height: 250%;
+     
         &::before {
             font-size: rem(10);
             margin-left: rem(8);
@@ -83,7 +83,7 @@
         font-size: rem(16);
         font-weight: 400;
         top: 100%;
-        left: 0;
+        left: rem(1);
         z-index: 5;
     }
 }

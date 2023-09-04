@@ -38,6 +38,7 @@
     // .header__menu
 
     &__menu {
+        
     }
 }
 .header-logo {
@@ -60,34 +61,61 @@
         flex-wrap: wrap;
         // justify-content: space-between;
         // border-right: rem(1) solid $lightGrayColor;
-        border-left: rem(1) solid $lightGrayColor;
+        // border-left: rem(1) solid $lightGrayColor;
+        // border-top: rem(1) solid $lightGrayColor;
+        // border-bottom: rem(1) solid $lightGrayColor;
+
     }
 
     // .menu__item
 
     &__item {
-    position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: rem(0) rem(48);
-        min-height: rem(45);
-        // border: rem(1) solid $lightGrayColor;
+        position: relative;
+        // display: flex;
+        // align-items: center;
+        // justify-content: center;
+        padding: rem(12) rem(51) rem(12) rem(48);
+        margin-right: rem(-3);
+        margin-left: -0.03%;
+        border-right: rem(1) solid $lightGrayColor;
         border-top: rem(1) solid $lightGrayColor;
         border-bottom: rem(1) solid $lightGrayColor;
-        border-right: rem(1) solid $lightGrayColor;
+        // min-height: rem(41);
+        // border-bottom: rem(4) solid transparent;
+      
+      
         white-space: nowrap;
         text-align: center;
         color: $blackColor;
         font-weight: 600;
-        
+        &::before{
+            content: "";
+            position: absolute;
+            border-bottom: rem(4) solid transparent;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            transition: all 0.3s ease 0s;
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                &::before{
+                    border-bottom: rem(4) solid $blueColor; 
+                }
+            }
+        }
+        &:not(:last-child) {
+            // border-right: rem(1) solid $lightGrayColor;
+        }
+        &:first-child{
+             border-left: rem(1) solid $lightGrayColor;
+        }
     }
 
     // .menu__link
 
     &__link {
-        width: 100%;
-        line-height: 250%;
+        // width: 100%;
 
         // display: inline-block;
         // padding: rem(16) rem(41);
