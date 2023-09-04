@@ -20,7 +20,7 @@
 //&display=swap - добавить при подключении через плагин
 @import url("https://fonts.googleapis.com/css?family=Inter:regular,500,600,700&display=swap");
 
-// @import "fonts";
+@import "fonts";
 //</Подключаем шрифты>======================================
 
 //<Иконочные шрифты>=======================================
@@ -39,7 +39,7 @@ $blueColor: #1274e0;
 $blackColor: #101010;
 $sigBlackColor: #2e2e2e;
 $lightGrayColor: #9e9e9e;
-$gainsboroughColor: #9e9e9e;
+$gainsboroughColor: #e0e0e0;
 // $backColor: #656D72;
 // $greenColor: #23b123;
 // $redColor: #f46430;
@@ -84,6 +84,7 @@ body {
   font-family: $fontsFamily;
   font-size: $fontSize;
   font-weight: $fontWeight;
+  line-height: normal;
   // line-height: $line-height;
   height: 100%;
   // background-color: $backColor;

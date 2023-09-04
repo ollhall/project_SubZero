@@ -1,11 +1,11 @@
 import * as flsMob from './modules/mobile.js'
 flsMob.isMob()
 
-import * as flsSlick from "./modules/slick.js";
-flsSlick.isSlick();
+// import * as flsSlick from "./modules/slick.js";
+// flsSlick.isSlick();
 
-import * as flsScript from "./modules/script.js";
-flsScript.isScript();
+// import * as flsScript from "./modules/script.js";
+// flsScript.isScript();
 
 import * as flsBurger from './modules/burger.js'
 flsBurger.isBurger()
@@ -22,14 +22,14 @@ flsdynamicAdapt.isdynamicAdapt()
 // import * as flsAnchor from "./modules/anchor.js";
 // flsAnchor.isAnchor();
 
-import * as flsSpoller from './modules/spoller.js'
-flsSpoller.isSpoller()
+// import * as flsSpoller from './modules/spoller.js'
+// flsSpoller.isSpoller()
 
-// import * as flsSpollers from './modules/spollers.js'
-// flsSpollers.isSpollers()
+import * as flsSpollers from './modules/spollers.js'
+flsSpollers.isSpollers()
 
-import * as flsAriaExpanded from './modules/aria-expanded.js'
-flsAriaExpanded.isAriaExpanded()
+// import * as flsAriaExpanded from './modules/aria-expanded.js'
+// flsAriaExpanded.isAriaExpanded()
 
 // import * as flsSearch from './modules/search.js'
 // flsSearch.isSearch()
@@ -58,8 +58,8 @@ flsAriaExpanded.isAriaExpanded()
 // import * as flsNumb from "./modules/wNumb.js";
 // flsNumb.isNumb();
 
-import * as flsVideoButton from "./modules/video_button.js";
-flsVideoButton.isVideoButton();
+// import * as flsVideoButton from "./modules/video_button.js";
+// flsVideoButton.isVideoButton();
 
 // import * as flsVideoPlayer from "./modules/video_player.js";
 // flsVideoPlayer.isVideoPlayer();
