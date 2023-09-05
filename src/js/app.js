@@ -10,8 +10,8 @@ flsMob.isMob()
 import * as flsBurger from './modules/burger.js'
 flsBurger.isBurger()
 
-// import * as flsHeaderScroll from './modules/header_scroll.js'
-// flsHeaderScroll.isHeaderScroll()
+import * as flsHeaderScroll from './modules/header_scroll.js'
+flsHeaderScroll.isHeaderScroll()
 
 import * as flsWebp from './modules/webp.js'
 flsWebp.isWebp()

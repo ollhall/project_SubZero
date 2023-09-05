@@ -2,11 +2,44 @@
 
 //<ОСНОВНОЙ БЛОК>===========================================
 
-
-
 //</ОСНОВНОЙ БЛОК>===========================================
 
 //=============================================================
-
+.footer-title {
+    color: #fff;
+    font-family: Inter;
+    font-size: rem(18);
+    font-weight: 600;
+    line-height: 120%;
+    white-space: nowrap;
+    &:not(:last-child) {
+        margin-bottom: em(70, 18);
+    }
+    @media (max-width: $mobileSmall) {
+        font-size: rem(20);
+    }
+}
 //=============================================================
-
+.footer {
+    &__btn {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: start;
+        color: #fff;
+        font-size: rem(14);
+        font-weight: 500;
+        white-space: nowrap;
+        line-height: 250%;
+        &::before{
+            margin-left: rem(8);
+            font-size: rem(10);
+        }
+        @media (max-width: $mobileSmall) {
+            font-size: rem(16);
+        }
+        @media (max-width: $mobileSmall) {
+          justify-content: center;
+        }
+    }
+}

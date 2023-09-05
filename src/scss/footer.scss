@@ -1,86 +1,86 @@
 .footer {
-
+    background-color: $sigBlackColor;
     // .footer__container
 
     &__container {
     }
 
-    // .footer__top
-
-    &__top {
-    }
-
     // .footer__logo
 
     &__logo {
+        display: block;
+        padding-bottom: rem(20);
+        border-bottom: rem(1) solid #464646;
     }
 
-    // .footer__bottom
+    // .footer__body
 
-    &__bottom {
+    &__body {
+        padding: rem(100) 0;
+    }
+
+    // .footer__columns
+
+    &__columns {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: rem(75);
+      
     }
 
     // .footer__copy
 
     &__copy {
+        padding: rem(30) 0;
+        color: #dadada;
+        font-size: rem(11);
+        line-height: normal;
+        text-align: center;
+        border-top: rem(1) solid #464646;
     }
 }
-.top-footer {
-
-    // .top-footer__title
-
-    &__title {
-    }
-
-    // .top-footer__text
-
-    &__text {
-    }
-
-    // .top-footer__btn
-
-    &__btn {
-    }
-}
-
 .footer-logo {
 }
-.bottom-footer {
-
-    // .bottom-footer__columns
-
-    &__columns {
-    }
-
-    // .bottom-footer__column
-
-    &__column {
-    }
-}
 .column-footer {
-
     // .column-footer__contact
 
     &__contact {
+        flex: 1 1 rem(225);
+        @media (max-width: $mobileSmall) {
+            text-align: center;
+        }
     }
 
     // .column-footer__repair
 
     &__repair {
+        flex: 1 1 rem(225);
+        @media (max-width: $mobileSmall) {
+            text-align: center;
+        }
     }
 
     // .column-footer__brands
 
     &__brands {
+        flex: 1 1 rem(135);
+        @media (max-width: $mobileSmall) {
+            text-align: center;
+        }
     }
 
     // .column-footer__areas
 
     &__areas {
+        flex: 1;
+        @media (max-width: $mobileSmall) {
+            text-align: center;
+        }
     }
 }
 .contact-column {
-
     // .contact-column__title
 
     &__title {
@@ -89,27 +89,72 @@
     // .contact-column__schedule
 
     &__schedule {
+        color: #dadada;
+        font-size: rem(14);
+        margin-bottom: rem(30);
+        p {
+            &:not(:last-child) {
+                margin-bottom: rem(8);
+            }
+        }
+        @media (max-width: $mobileSmall) {
+            font-size: rem(16);
+        }
     }
 
     // .contact-column__phone
 
     &__phone {
+        color: #dadada;
+        font-size: rem(18);
+        font-weight: 500;
+        line-height: 155%;
     }
 
     // .contact-column__email
 
     &__email {
+        display: block;
+        color: #dadada;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 155%;
+        @media (max-width: $mobileSmall) {
+            font-size: rem(16);
+        }
+        margin-bottom: rem(50);
     }
 
     // .contact-column__btn
 
     &__btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row-reverse;
+        max-width: rem(186);
+        width: 100%;
+        height: rem(40);
+        color: #dadada;
+        font-size: rem(14);
+        line-height: normal;
+        border: rem(1) solid rgba(255, 255, 255, 0.1);
+        background: #464646;
+        &::before {
+            font-size: rem(10);
+            margin-left: rem(8);
+        }
+        @media (max-width: $mobileSmall) {
+            max-width: rem(206);
+            height: rem(50);
+        }
+        @media (max-width: $mobileSmall) {
+            margin: 0 auto;
+        }
     }
 }
-.footer-title {
-}
-.repair-column {
 
+.repair-column {
     // .repair-column__title
 
     &__title {
@@ -131,7 +176,6 @@
     }
 }
 .brands-column {
-
     // .brands-column__title
 
     &__title {
@@ -153,14 +197,12 @@
     }
 }
 .brands {
-
     // .brands__btn
 
     &__btn {
     }
 }
 .areas-column {
-
     // .areas-column__title
 
     &__title {
@@ -182,10 +224,16 @@
     }
 }
 .areas {
-
     // .areas__btn
 
     &__btn {
     }
 }
-
+.column__list {
+    color: #dadada;
+    font-size: rem(14);
+    line-height: 250%;
+    @media (max-width: $mobileSmall) {
+        font-size: rem(16);
+    }
+}

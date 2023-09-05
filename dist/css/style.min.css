@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css?family=Inter:regular,500,600,700&display=swap");
 @font-face {
   font-family: "swiper-icons";
@@ -328,6 +329,49 @@ body._lock {
   object-fit: contain;
 }
 
+.footer-title {
+  color: #fff;
+  font-family: Inter;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 120%;
+  white-space: nowrap;
+}
+.footer-title:not(:last-child) {
+  margin-bottom: 3.8888888889em;
+}
+@media (max-width: 29.99875em) {
+  .footer-title {
+    font-size: 1.25rem;
+  }
+}
+
+.footer__btn {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: start;
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 500;
+  white-space: nowrap;
+  line-height: 250%;
+}
+.footer__btn::before {
+  margin-left: 0.5rem;
+  font-size: 0.625rem;
+}
+@media (max-width: 29.99875em) {
+  .footer__btn {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 29.99875em) {
+  .footer__btn {
+    justify-content: center;
+  }
+}
+
 .show-more__btn {
   width: 100%;
   height: 2.5rem;
@@ -468,9 +512,22 @@ body._lock {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 0.0625rem solid #9E9E9E;
+    border: 0.0625rem solid #9e9e9e;
   }
 }
+.header__menu {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+}
+
+.header__menu.menu.sticky {
+  position: fixed;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  /* Тень, если необходимо */
+  /* Другие стили для фиксированного меню, если необходимо */
+}
+
 @media (max-width: 47.99875em) {
   .menu__body {
     position: fixed;
@@ -638,5 +695,138 @@ body._lock {
   .icon-menu.menu-open::after {
     transform: rotate(45deg);
     bottom: calc(50% - 0.0625rem);
+  }
+}
+
+.footer {
+  background-color: #2e2e2e;
+}
+.footer__logo {
+  display: block;
+  padding-bottom: 1.25rem;
+  border-bottom: 0.0625rem solid #464646;
+}
+.footer__body {
+  padding: 6.25rem 0;
+}
+.footer__columns {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 4.6875rem;
+}
+.footer__copy {
+  padding: 1.875rem 0;
+  color: #dadada;
+  font-size: 0.6875rem;
+  line-height: normal;
+  text-align: center;
+  border-top: 0.0625rem solid #464646;
+}
+
+.column-footer__contact {
+  flex: 1 1 14.0625rem;
+}
+@media (max-width: 29.99875em) {
+  .column-footer__contact {
+    text-align: center;
+  }
+}
+.column-footer__repair {
+  flex: 1 1 14.0625rem;
+}
+@media (max-width: 29.99875em) {
+  .column-footer__repair {
+    text-align: center;
+  }
+}
+.column-footer__brands {
+  flex: 1 1 8.4375rem;
+}
+@media (max-width: 29.99875em) {
+  .column-footer__brands {
+    text-align: center;
+  }
+}
+.column-footer__areas {
+  flex: 1;
+}
+@media (max-width: 29.99875em) {
+  .column-footer__areas {
+    text-align: center;
+  }
+}
+
+.contact-column__schedule {
+  color: #dadada;
+  font-size: 0.875rem;
+  margin-bottom: 1.875rem;
+}
+.contact-column__schedule p:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+@media (max-width: 29.99875em) {
+  .contact-column__schedule {
+    font-size: 1rem;
+  }
+}
+.contact-column__phone {
+  color: #dadada;
+  font-size: 1.125rem;
+  font-weight: 500;
+  line-height: 155%;
+}
+.contact-column__email {
+  display: block;
+  color: #dadada;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 155%;
+  margin-bottom: 3.125rem;
+}
+@media (max-width: 29.99875em) {
+  .contact-column__email {
+    font-size: 1rem;
+  }
+}
+.contact-column__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row-reverse;
+  max-width: 11.625rem;
+  width: 100%;
+  height: 2.5rem;
+  color: #dadada;
+  font-size: 0.875rem;
+  line-height: normal;
+  border: 0.0625rem solid rgba(255, 255, 255, 0.1);
+  background: #464646;
+}
+.contact-column__btn::before {
+  font-size: 0.625rem;
+  margin-left: 0.5rem;
+}
+@media (max-width: 29.99875em) {
+  .contact-column__btn {
+    max-width: 12.875rem;
+    height: 3.125rem;
+  }
+}
+@media (max-width: 29.99875em) {
+  .contact-column__btn {
+    margin: 0 auto;
+  }
+}
+
+.column__list {
+  color: #dadada;
+  font-size: 0.875rem;
+  line-height: 250%;
+}
+@media (max-width: 29.99875em) {
+  .column__list {
+    font-size: 1rem;
   }
 }
