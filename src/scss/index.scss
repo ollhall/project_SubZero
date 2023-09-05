@@ -1,0 +1,50 @@
+.team {
+    background-repeat: no-repeat;
+    background-color: #2e2e2e;
+    
+    // .team__container
+
+    &__container {
+    }
+    &__body {
+        max-width: rem(605);
+        margin-left: auto;
+    }
+    // .team__title
+
+    &__title {
+        color: #fff;
+        @include adaptiv-value("font-size", 52, 41, 1);
+        font-weight: 700;
+        line-height: 120%;
+        @include adaptiv-value("margin-bottom", 70, 60, 1);
+    }
+
+    // .team__text
+
+    &__text {
+        color: #dadada;
+        line-height: 155%;
+        margin-bottom: rem(70);
+    }
+
+    // .team__btn
+
+    &__btn {
+        max-width: rem(214);
+        width: 100%;
+        min-height: rem(50);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row-reverse;
+        color: #dadada;
+        line-height: normal;
+        border: rem(1) solid rgba(255, 255, 255, 0.1);
+        background: $mainColor;
+        &::before {
+            font-size: rem(10);
+            margin-left: rem(10);
+        }
+    }
+}

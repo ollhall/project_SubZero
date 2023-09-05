@@ -1,5 +1,6 @@
 .footer {
     background-color: $sigBlackColor;
+    overflow: hidden;
     // .footer__container
 
     &__container {
@@ -8,9 +9,29 @@
     // .footer__logo
 
     &__logo {
+        position: relative;
         display: block;
         padding-bottom: rem(20);
         border-bottom: rem(1) solid #464646;
+        @media (max-width: em(980)) {
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                border-bottom: rem(1) solid #464646;
+                width: 100%;
+                bottom: rem(-1);
+            }
+            &::before {
+                left: 100%;
+            }
+            &::after {
+                right: 100%;
+            }
+        }
+        @media (max-width: $mobileSmall) {
+            text-align: center;
+        }
     }
 
     // .footer__body
@@ -27,18 +48,34 @@
         justify-content: space-between;
         flex-wrap: wrap;
         gap: rem(75);
-      
     }
 
     // .footer__copy
 
     &__copy {
+        position: relative;
         padding: rem(30) 0;
         color: #dadada;
         font-size: rem(11);
         line-height: normal;
         text-align: center;
         border-top: rem(1) solid #464646;
+        @media (max-width: em(980)) {
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                border-top: rem(1) solid #464646;
+                width: 100%;
+                top: rem(-1);
+            }
+            &::before {
+                left: 100%;
+            }
+            &::after {
+                right: 100%;
+            }
+        }
     }
 }
 .footer-logo {
