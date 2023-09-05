@@ -33,12 +33,28 @@
         font-size: rem(20);
         font-weight: 600;
         line-height: normal;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        &::before {
+            color: $blueColor;
+            margin-right: rem(15);
+            font-size: rem(15);
+        }
+        @media (max-width: $mobileSmall) {
+            max-width: rem(315);
+            width: 100%;
+            height: rem(55);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: rem(1) solid #9E9E9E;
+        }
     }
 
     // .header__menu
 
     &__menu {
-        
     }
 }
 .header-logo {
@@ -49,127 +65,159 @@
     // .menu__body
 
     &__body {
+        @media (max-width: $mobile) {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: -100%;
+            transition: left 0.3s ease 0s;
+            overflow: auto;
+            background-color: #fff;
+            gap: rem(30);
+            @include adaptiv-value("padding-top", 180, 120, 1);
+            padding-left: rem(15);
+            padding-right: rem(15);
+            padding-bottom: rem(30);
+            &::before {
+                content: "";
+                position: fixed;
+                width: 100%;
+                @include adaptiv-value("height", 170, 72, 1);
+                top: 0;
+                left: -100%;
+                background-color: #fff;
+                z-index: 2;
+                transition: left 0.3s ease 0s;
+            }
+            .menu-open & {
+                left: 0;
+                &::before {
+                    left: 0;
+                }
+            }
+        }
     }
 
     // .menu__list
 
     &__list {
-        // display: grid;
-        // grid-template-columns: repeat(5, 1fr);
         display: flex;
         align-items: center;
         flex-wrap: wrap;
-        // justify-content: space-between;
-        // border-right: rem(1) solid $lightGrayColor;
-        // border-left: rem(1) solid $lightGrayColor;
-        // border-top: rem(1) solid $lightGrayColor;
-        // border-bottom: rem(1) solid $lightGrayColor;
-
+        @media (max-width: $mobile) {
+            flex-direction: column;
+            gap: rem(100);
+        }
+        @media (max-width: $mobileSmall) {
+            margin-bottom: rem(100);
+        }
     }
 
     // .menu__item
 
     &__item {
         position: relative;
-        // display: flex;
-        // align-items: center;
-        // justify-content: center;
-        padding: rem(12) rem(51) rem(12) rem(48);
-        margin-right: rem(-3);
-        margin-left: -0.03%;
-        border-right: rem(1) solid $lightGrayColor;
-        border-top: rem(1) solid $lightGrayColor;
-        border-bottom: rem(1) solid $lightGrayColor;
-        // min-height: rem(41);
-        // border-bottom: rem(4) solid transparent;
-      
-      
         white-space: nowrap;
         text-align: center;
         color: $blackColor;
         font-weight: 600;
-        &::before{
-            content: "";
-            position: absolute;
-            border-bottom: rem(4) solid transparent;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            transition: all 0.3s ease 0s;
-        }
         @media (any-hover: hover) {
             &:hover {
-                &::before{
-                    border-bottom: rem(4) solid $blueColor; 
+                &::before {
+                    border-bottom: rem(4) solid $blueColor;
                 }
             }
         }
-        &:not(:last-child) {
-            // border-right: rem(1) solid $lightGrayColor;
+
+        @media (min-width: $mobile) {
+            margin-right: rem(-1);
+            border-right: rem(1) solid $lightGrayColor;
+            border-top: rem(1) solid $lightGrayColor;
+            border-bottom: rem(1) solid $lightGrayColor;
+            padding-top: rem(12);
+            padding-bottom: rem(12);
+            @include adaptiv-value("padding-right", 50, 10, 1);
+            @include adaptiv-value("padding-left", 48, 10, 1);
+            &::before {
+                content: "";
+                position: absolute;
+                border-bottom: rem(4) solid transparent;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                transition: all 0.3s ease 0s;
+            }
+            &:first-child {
+                border-left: rem(1) solid $lightGrayColor;
+                margin-left: -0.03%;
+            }
+            &_active {
+                background-color: $blueColor;
+                color: #fff;
+            }
         }
-        &:first-child{
-             border-left: rem(1) solid $lightGrayColor;
-        }
+
+        @media (max-width: $mobile) {
+            max-width: rem(315);
+            width: 100%;
+           }
     }
 
     // .menu__link
 
     &__link {
-        // width: 100%;
-
-        // display: inline-block;
-        // padding: rem(16) rem(41);
-        // padding: rem(16) rem(0);
+    
     }
 }
 
 //=============================================================
 // Burger
 
-// .icon-menu {
-//     display: none;
-//     @media (max-width: $mobile) {
-//         display: block;
-//         position: relative;
-//         width: rem(30);
-//         height: rem(18);
-//         cursor: pointer;
-//         z-index: 5;
-//         span,
-//         &::before,
-//         &::after {
-//             content: "";
-//             transition: all 0.3s ease 0s;
-//             right: 0;
-//             position: absolute;
-//             width: 100%;
-//             height: rem(2);
-//             background-color: #fff;
-//         }
-//         &::before {
-//             top: 0;
-//         }
-//         &::after {
-//             bottom: 0;
-//         }
-//         span {
-//             top: calc(50% - rem(1));
-//         }
-//         &.menu-open {
-//             span {
-//                 transform: scale(0);
-//             }
-//             &::before {
-//                 transform: rotate(-45deg);
-//                 top: calc(50% - rem(1));
-//             }
-//             &::after {
-//                 transform: rotate(45deg);
-//                 bottom: calc(50% - rem(1));
-//             }
-//         }
-//     }
-// }
+.icon-menu {
+    display: none;
+    @media (max-width: $mobile) {
+        display: block;
+        position: relative;
+        width: rem(30);
+        height: rem(18);
+        cursor: pointer;
+        z-index: 5;
+        span,
+        &::before,
+        &::after {
+            content: "";
+            transition: all 0.3s ease 0s;
+            right: 0;
+            position: absolute;
+            width: 100%;
+            height: rem(2);
+            background-color: $blackColor;
+        }
+        &::before {
+            top: 0;
+        }
+        &::after {
+            bottom: 0;
+        }
+        span {
+            top: calc(50% - rem(1));
+        }
+        &.menu-open {
+            span {
+                transform: scale(0);
+            }
+            &::before {
+                transform: rotate(-45deg);
+                top: calc(50% - rem(1));
+            }
+            &::after {
+                transform: rotate(45deg);
+                bottom: calc(50% - rem(1));
+            }
+        }
+    }
+}
 //=============================================================
 // .header
 //     position: fixed;
@@ -177,37 +225,5 @@
 //     left: 0;
 //     width: 100%;
 
-// .menu__body
-// @media (max-width: $mobile) {
-//     position: fixed;
-//     width: 100%;
-//     height: 100%;
-//     top: 0;
-//     left: -100%;
-//     transition: left 0.3s ease 0s;
-//     overflow: auto;
-//     background-color: #1b2327;
-//     gap: rem(30);
-//     @include adaptiv-value("padding-top", 180, 120, 1);
-//     padding-left: rem(15);
-//     padding-right: rem(15);
-//     padding-bottom: rem(30);
-//     &::before {
-//         content: "";
-//         position: fixed;
-//         width: 100%;
-//         @include adaptiv-value("height", 170, 72, 1);
-//         top: 0;
-//         left: -100%;
-//         background-color: #141a1d;
-//         z-index: 2;
-//         transition: left 0.3s ease 0s;
-//     }
-//     .menu-open &{
-//         left: 0;
-//         &::before {
-//             left: 0;
-//         }
-//     }
-// }
+
 //============================================================

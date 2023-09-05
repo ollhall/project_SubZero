@@ -73,8 +73,8 @@ flsSpollers.isSpollers()
 // import * as flsParallaxMouse from './modules/parallax-mouse.js'
 // flsParallaxMouse.isParallaxMouse()
 
-// import * as flsShowMore from './modules/show_more.js'
-// flsShowMore.isShowMore()
+import * as flsShowMore from './modules/show_more.js'
+flsShowMore.isShowMore()
 
 
 /*

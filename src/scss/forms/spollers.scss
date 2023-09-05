@@ -2,34 +2,39 @@
     // .menu__spollers
 
     &__spollers {
-       
+   
     }
 
     // .menu__sub-list
 
     &__sub-list {
-        // display: grid;
-        // gap: rem(27);
         width: 100%;
         color: $blackColor;
         font-size: rem(16);
         font-weight: 400;
         line-height: normal;
+        @media (max-width: $mobile) {
+            display: grid;
+            gap: rem(40);
+        }
     }
 
     // .menu__sub-item
 
     &__sub-item {
-        padding: rem(13) rem(27);
-        width: 100%;
-        border-top: 1px solid transparent;
-        border-bottom: 1px solid transparent;
-        transition: all 0.3s ease 0s;
-        @media (any-hover: hover) {
-            &:hover {
-                border-top: 1px solid #9e9e9e;
-                border-bottom: 1px solid #9e9e9e;
-                background: #f2f2f2;
+      
+        @media (min-width: $mobile) {
+            width: 100%;
+            padding: rem(13) rem(27);
+            border-top: 1px solid transparent;
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s ease 0s;
+            @media (any-hover: hover) {
+                &:hover {
+                    border-top: 1px solid #9e9e9e;
+                    border-bottom: 1px solid #9e9e9e;
+                    background: #f2f2f2;
+                }
             }
         }
     }
@@ -52,11 +57,9 @@
     // .spollers-menu__title
 
     &__title {
-       
         display: flex;
         align-items: center;
         flex-direction: row-reverse;
-        // padding: rem(0) rem(51);
      
         &::before {
             font-size: rem(10);
@@ -68,22 +71,36 @@
                 transform: rotate(-90deg);
             }
         }
+        @media (max-width: $mobile) {
+            margin: 0 auto;
+        }
     }
 
     // .spollers-menu__body
 
     &__body {
-        // width: calc(100% + rem(2));
         width: 100%;
-        position: absolute;
-
-        border: rem(1) solid $lightGrayColor;
         background: #fff;
         color: $blackColor;
         font-size: rem(16);
         font-weight: 400;
-        top: 100%;
-        left: rem(1);
-        z-index: 5;
+        @media (min-width: $mobile) {
+            position: absolute;
+            border: rem(1) solid $lightGrayColor;
+            left: rem(1);
+            top: 100%;
+            z-index: 5;
+        }
+        @media (max-width: $mobile) {
+            padding-top: rem(50);
+        }
     }
+}
+
+.menu__sub-item-brand:nth-child(n + 4) {
+    display: none;
+}
+
+.menu__sub-item-brand.is-visible {
+    display: block;
 }

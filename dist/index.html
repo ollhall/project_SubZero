@@ -19,16 +19,16 @@
                 <a class="header__logo header-logo" href="index.html">
                     <img src="img/header-logo.svg" alt="Logotype">
                 </a>
-                <a class="header__phone" href="tel:2062086717">206-208-6717</a>
-                <!-- <button type="button" class="icon-menu">
+                <a class="header__phone _icon-phone" href="tel:2062086717" data-da=".menu__body,479.98,2">206-208-6717</a>
+                <button type="button" class="icon-menu">
                     <span></span>
-                </button> -->
+                </button>
             </div>
 
             <div class="header__menu menu">
                 <nav class="menu__body">
                     <ul class="menu__list">
-                        <li class="menu__item"><a href="#" class="menu__link">About Us</a></li>
+                        <li class="menu__item menu__item_active"><a href="#" class="menu__link">About Us</a></li>
                         <li class="menu__item">
                             <div class="menu__spollers spollers-menu" data-spollers>
                                 <div class="spollers-menu__item">
@@ -59,29 +59,30 @@
                                     <button class="spollers-menu__title _icon-arrow-spol" type="button"
                                         data-spoller>Brands</button>
                                     <div class="spollers-menu__body">
-                                        <ul class="menu__sub-list">
-                                            <li class="menu__sub-item">
+                                        <ul class="menu__sub-list menu__sub-list-brand">
+                                            <li class="menu__sub-item menu__sub-item-brand">
                                                 <a class="menu__sub-link" href="#">Sub-Zero</a>
                                             </li>
-                                            <li class="menu__sub-item">
+                                            <li class="menu__sub-item menu__sub-item-brand">
                                                 <a class="menu__sub-link" href="#">Thermador</a>
                                             </li>
-                                            <li class="menu__sub-item">
+                                            <li class="menu__sub-item menu__sub-item-brand">
                                                 <a class="menu__sub-link" href="#">Viking</a>
                                             </li>
-                                            <li class="menu__sub-item">
+                                            <li class="menu__sub-item menu__sub-item-brand">
                                                 <a class="menu__sub-link" href="#">Wolf</a>
                                             </li>
-                                            <li class="menu__sub-item">
+                                            <li class="menu__sub-item menu__sub-item-brand">
                                                 <a class="menu__sub-link" href="#">Bertazzoni</a>
                                             </li>
-                                            <li class="menu__sub-item">
+                                            <li class="menu__sub-item menu__sub-item-brand">
                                                 <a class="menu__sub-link" href="#">Monogram</a>
                                             </li>
-                                            <li class="menu__sub-item">
+                                            <li class="menu__sub-item menu__sub-item-brand">
                                                 <a class="menu__sub-link" href="#">Dacor</a>
                                             </li>
                                         </ul>
+                                        <button class="show-more__btn show-more-brends _icon-more">More brands</button>
                                     </div>
                                 </div>
                             </div>
@@ -135,7 +136,115 @@
 
     </main>
     <footer class="footer">
-  
+    <div class="footer__container">
+        <div class="footer__top top-footer" style="background-image: url(img/footer-bg.jpg)">
+            <h2 class="top-footer__title">Our Team</h2>
+            <div class="top-footer__text">
+                <p>
+                    Our appliance experts have many years of experience in both servicing appliances and treating our
+                    customers right. When your appliance needs work or maintenance, there’s no one better to call that
+                    is more trusted and reliable to handle your specific needs. We are appliance repair company Seattle
+                    Subzero-Wolf Care Appliance Repair have the experience to get the job done right from the start, and
+                    at very competitive and affordable rates. Our goal is to get your Subzero or Wolf back up and
+                    running as quickly as possible.
+                </p>
+            </div>
+            <a class="top-footer__btn _icon-arrow-up" href="#">Request Service</a>
+        </div>
+        <a class="footer__logo footer-logo" href="index.html">
+            <img src="img/footer-logo.svg" alt="Logotype">
+        </a>
+        <div class="footer__bottom bottom-footer">
+            <div class="bottom-footer__columns">
+                <div class="bottom-footer__column column-footer">
+                    <div class="column-footer__contact contact-column">
+                        <h4 class="contact-column__title footer-title">Contact Information</h4>
+                        <div class="contact-column__schedule">
+                            <p>Monday-Friday  8am-5pm</p>
+                            <p>Saturday  9am-3pm</p>
+                        </div>
+                        <a class="contact-column__phone" href="tel:2062086717">206-208-6717</a>
+                        <a class="contact-column__email" href="mailto:info@seattlesubzerowolfcare.com">info@seattlesubzerowolfcare.com</a>
+                        <a class="contact-column__btn _icon-arrow-up" href="#">Request Service</a>
+                    </div>
+                </div>
+                <div class="bottom-footer__column column-footer">
+                    <div class="column-footer__repair repair-column">
+                        <h4 class="repair-column__title footer-title">Appliance Repair</h4>
+                        <ul class="repair-column__list">
+                            <li class="repair-column__item">
+                                <a class="repair-column__link" href="#">Refrigerator Repair</a>
+                            </li>
+                            <li class="repair-column__item">
+                                <a class="repair-column__link" href="#">Oven & Stove Repair</a>
+                            </li>
+                            <li class="repair-column__item">
+                                <a class="repair-column__link" href="#">Electric & Gas Cooktop Repair</a>
+                            </li>
+                            <li class="repair-column__item">
+                                <a class="repair-column__link" href="#">Washer & Dryer Repair</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bottom-footer__column column-footer">
+                    <div class="column-footer__brands brands-column">
+                        <h4 class="brands-column__title footer-title">Brands</h4>
+                        <ul class="brands-column__list">
+                            <li class="brands-column__item">
+                                <a class="brands-column__link" href="#">Sub-Zero</a>
+                            </li>
+                            <li class="brands-column__item">
+                                <a class="brands-column__link" href="#">Thermador</a>
+                            </li>
+                            <li class="brands-column__item">
+                                <a class="brands-column__link" href="#">Viking</a>
+                            </li>
+                            <li class="brands-column__item">
+                                <a class="brands-column__link" href="#">Wolf</a>
+                            </li>
+                            <li class="brands-column__item">
+                                <a class="brands-column__link" href="#">Bertazzoni</a>
+                            </li>
+                            <li class="brands-column__item">
+                                <a class="brands-column__link" href="#">Monogram</a>
+                            </li>
+                        </ul>
+                        <a class="brands__btn _icon-arrow-up" href="#">All brands</a>
+                    </div>
+                </div>
+                <div class="bottom-footer__column column-footer">
+                    <div class="column-footer__areas areas-column">
+                        <h4 class="areas-column__title footer-title">Service Areas</h4>
+                        <ul class="areas-column__list">
+                            <li class="areas-column__item">
+                                <a class="areas-column__link" href="#">Seattle</a>
+                            </li>
+                            <li class="areas-column__item">
+                                <a class="areas-column__link" href="#">Bellevue</a>
+                            </li>
+                            <li class="areas-column__item">
+                                <a class="areas-column__link" href="#">Redmond</a>
+                            </li>
+                            <li class="areas-column__item">
+                                <a class="areas-column__link" href="#">Issaquah</a>
+                            </li>
+                            <li class="areas-column__item">
+                                <a class="areas-column__link" href="#">Mercer Island</a>
+                            </li>
+                            <li class="areas-column__item">
+                                <a class="areas-column__link" href="#">Sammamish</a>
+                            </li>
+                        </ul>
+                        <a class="areas__btn _icon-arrow-up" href="#">All brands</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__copy">
+            Copyright 2020-2023 © Seattle Subzero-Wolf Care. All Rights Reserved.
+        </div>
+    </div>
 </footer>
   </div>
   
