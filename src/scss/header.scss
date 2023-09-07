@@ -6,16 +6,21 @@
     top: 0;
     transition: all 0.3s ease 0s;
     z-index: 50;
-    background-color: #fff;
+    background-color: transparent;
     &._header-scroll {
         background-color: rgba(255, 255, 255, 0.8);
-        .header__top{
-            display: none;
+        @media (min-width: $mobile) {
+            .header__top {
+                display: none;
+            }
         }
     }
     // .header__container
 
     &__container {
+        @media (max-width: em(370)) {
+            padding: 0 rem(15);
+        }
     }
 
     // .header__wrapper
@@ -55,7 +60,7 @@
             margin-right: rem(15);
             font-size: rem(15);
         }
-        @media (max-width: $mobileSmall) {
+        @media (max-width: $mobile) {
             max-width: rem(315);
             width: 100%;
             height: rem(55);
@@ -63,6 +68,7 @@
             align-items: center;
             justify-content: center;
             border: rem(1) solid #9e9e9e;
+            margin: 0 auto rem(20) auto;
         }
     }
     &__service-btn {
@@ -76,17 +82,26 @@
         font-weight: 500;
         background-color: $blueColor;
         line-height: normal;
+        transition: all 0.3s ease 0s;
         &::before {
             margin-right: rem(12);
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $mainColor;
+                color: #dadada;
+            }
+        }
+        @media (max-width: $mobile) {
+            max-width: rem(315);
+            margin: 0 auto;
         }
     }
     // .header__menu
 
     &__menu {
-     
     }
 }
-
 
 .header-logo {
 }
@@ -135,15 +150,11 @@
     &__list {
         display: flex;
         align-items: center;
-        // justify-content: space-between;
-        // flex-wrap: wrap;
-        // border-top: rem(1) solid $lightGrayColor;
-        // border-bottom: rem(1) solid $lightGrayColor;
         @media (max-width: $mobile) {
             flex-direction: column;
             gap: rem(100);
         }
-        @media (max-width: $mobileSmall) {
+        @media (max-width: $mobile) {
             margin-bottom: rem(100);
         }
     }
@@ -155,7 +166,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-
         white-space: nowrap;
         text-align: center;
         color: $blackColor;
@@ -168,34 +178,38 @@
             }
         }
         &_1 {
-            flex: 1 1 rem(175);
+            @media (min-width: $mobile) {
+                flex: 1 1 rem(175);
+            }
         }
         &_2 {
-            flex: 1 1 rem(246);
+            @media (min-width: $mobile) {
+                flex: 1 1 rem(246);
+            }
         }
         &_3 {
-            flex: 1 1 rem(169);
+            @media (min-width: $mobile) {
+                flex: 1 1 rem(169);
+            }
         }
         &_4 {
-            flex: 1 1 rem(220);
+            @media (min-width: $mobile) {
+                flex: 1 1 rem(220);
+            }
         }
         &_5 {
-            flex: 1 1 rem(175);
+            @media (min-width: $mobile) {
+                flex: 1 1 rem(175);
+            }
         }
 
         @media (min-width: $mobile) {
             margin-right: rem(-1);
-            // margin-left: rem(-1);
             border-left: rem(0.5) solid $lightGrayColor;
             border-right: rem(0.5) solid $lightGrayColor;
             border-top: rem(1) solid $lightGrayColor;
             border-bottom: rem(1) solid $lightGrayColor;
             padding: rem(12);
-            // padding-top: rem(12);
-            // padding-bottom: rem(12);
-            // @include adaptiv-value("padding-left", 49, 0, 1);
-            // @include adaptiv-value("padding-right", 49, 0, 1);
-
             &::before {
                 content: "";
                 position: absolute;
@@ -205,16 +219,9 @@
                 width: 100%;
                 transition: all 0.3s ease 0s;
             }
-            &:first-child {
-                // border-left: rem(1) solid $lightGrayColor;
-                // margin-left: -0.03%;
-            }
-            &:last-child {
-                // border-right: rem(1) solid $lightGrayColor;
-            }
             &_active {
-                // background-color: $blueColor;
-                // color: #fff;
+                background-color: $blueColor;
+                color: #fff;
             }
         }
 

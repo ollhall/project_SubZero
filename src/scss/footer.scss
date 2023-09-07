@@ -4,13 +4,15 @@
     // .footer__container
 
     &__container {
+        @media (max-width: em(370)) {
+            padding: 0 rem(15);
+          }
     }
-
-    // .footer__logo
-
-    &__logo {
+    &__top {
         position: relative;
-        display: block;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         padding-bottom: rem(20);
         border-bottom: rem(1) solid #464646;
         @media (max-width: em(980)) {
@@ -30,10 +32,23 @@
             }
         }
         @media (max-width: $mobileSmall) {
-            text-align: center;
+            justify-content: center;
         }
     }
+    // .footer__logo
 
+    &__logo {
+        display: block;
+    }
+    &__social {
+        display: flex;
+        align-items: center;
+        gap: rem(20);
+        @media (max-width: $mobileSmall) {
+           justify-content: center;
+           margin-bottom: rem(50);
+        }
+    }
     // .footer__body
 
     &__body {
@@ -177,6 +192,13 @@
         line-height: normal;
         border: rem(1) solid rgba(255, 255, 255, 0.1);
         background: #464646;
+        transition: all 0.3s ease 0s;
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $blueColor;
+                color: #fff;
+            }
+        }
         &::before {
             font-size: rem(10);
             margin-left: rem(8);

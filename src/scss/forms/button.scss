@@ -1,5 +1,4 @@
-.button {
-}
+
 .show-more__btn {
     width: 100%;
     height: rem(40);
@@ -7,14 +6,50 @@
     align-items: center;
     justify-content: center;
     flex-direction: row-reverse;
-   
     color: $mainColor;
-    &::before{
+    transition: all 0.3s ease 0s;
+    &::before {
+        transition: color 0.3s ease 0s;
         margin-left: rem(8);
         color: $lightGrayColor;
     }
+    @media (any-hover: hover) {
+        &:hover {
+            background-color: #9e9e9e;
+            color: #fff;
+            &::before {
+                color: #fff;
+            }
+        }
+    }
     @media (min-width: $mobile) {
         border-top: rem(1) solid $lightGrayColor;
-        background: #f2f2f2;
+        background-color: #f2f2f2;
+    }
+    @media (max-width: $mobile) {
+    }
+    margin-top: rem(20);
+}
+.footer {
+    &__btn {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        justify-content: start;
+        color: #fff;
+        font-size: rem(14);
+        font-weight: 500;
+        white-space: nowrap;
+        line-height: 250%;
+        &::before {
+            margin-left: rem(8);
+            font-size: rem(10);
+        }
+        @media (max-width: $mobileSmall) {
+            font-size: rem(16);
+        }
+        @media (max-width: $mobileSmall) {
+            justify-content: center;
+        }
     }
 }

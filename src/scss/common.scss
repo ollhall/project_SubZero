@@ -2,16 +2,46 @@
 
 //<ОСНОВНОЙ БЛОК>===========================================
 .page {
-
     // .page__team
 
     &__team {
         padding: rem(200) 0;
     }
+    // .page__main
+
+    &__main {
+        @include adaptiv-value("padding-top", 305, 242, 1);
+        padding-bottom: rem(157);
+    }
+    // .page__offer
+
+    &__offer {
+        @include adaptiv-value("padding-top", 227, 200, 1);
+        padding-bottom: rem(250);
+    }
+    // .page__choose
+
+    &__choose {
+        margin-bottom: rem(145);
+    }
 }
 //</ОСНОВНОЙ БЛОК>===========================================
 
 //=============================================================
+.title {
+    color: $blackColor;
+    @include adaptiv-value("font-size", 52, 41, 1);
+    font-weight: 700;
+    line-height: 120%;
+    // .title_white
+
+    &_white {
+        color: #fff;
+        @include adaptiv-value("font-size", 52, 41, 1);
+        font-weight: 700;
+        line-height: 120%;
+    }
+}
 .footer-title {
     color: #fff;
     font-family: Inter;
@@ -27,26 +57,3 @@
     }
 }
 //=============================================================
-.footer {
-    &__btn {
-        display: flex;
-        flex-direction: row-reverse;
-        align-items: center;
-        justify-content: start;
-        color: #fff;
-        font-size: rem(14);
-        font-weight: 500;
-        white-space: nowrap;
-        line-height: 250%;
-        &::before{
-            margin-left: rem(8);
-            font-size: rem(10);
-        }
-        @media (max-width: $mobileSmall) {
-            font-size: rem(16);
-        }
-        @media (max-width: $mobileSmall) {
-          justify-content: center;
-        }
-    }
-}
