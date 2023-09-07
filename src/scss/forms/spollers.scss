@@ -60,10 +60,9 @@
         display: flex;
         align-items: center;
         flex-direction: row-reverse;
-     
         &::before {
             font-size: rem(10);
-            margin-left: rem(8);
+            margin-left: rem(7);
             transition: transform 0.3s ease 0s;
         }
         &._spoller-active {
@@ -87,7 +86,8 @@
         @media (min-width: $mobile) {
             position: absolute;
             border: rem(1) solid $lightGrayColor;
-            left: rem(1);
+            left: rem(0);
+            right: 0;
             top: 100%;
             z-index: 5;
         }

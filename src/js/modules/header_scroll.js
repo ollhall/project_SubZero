@@ -1,36 +1,26 @@
 export function isHeaderScroll () {
   // Header
 
-  // let scrollpos = window.scrollY
+  let scrollpos = window.scrollY
 
-  // const header = document.querySelector('header')
-  // const scrollChange = 1
+  const header = document.querySelector('header')
+  const scrollChange = 1
 
-  // const add_class_on_scroll = () => header.classList.add('_header-scroll')
-  // const remove_class_on_scroll = () => header.classList.remove('_header-scroll')
+  const add_class_on_scroll = () => header.classList.add('_header-scroll')
+  const remove_class_on_scroll = () => header.classList.remove('_header-scroll')
 
-  // window.addEventListener('scroll', function () {
-  //   scrollpos = window.scrollY
+  window.addEventListener('scroll', function () {
+    scrollpos = window.scrollY
 
-  //   if (scrollpos >= scrollChange) {
-  //     add_class_on_scroll()
-  //   } else {
-  //     remove_class_on_scroll()
-  //   }
-  // })
-
-
-  //===============================================
-  window.addEventListener("scroll", function () {
-    const headerMenu = document.querySelector(".header__menu.menu");
-  
-    if (window.scrollY > 0) {
-      headerMenu.classList.add("sticky");
+    if (scrollpos >= scrollChange) {
+      add_class_on_scroll()
     } else {
-      headerMenu.classList.remove("sticky");
+      remove_class_on_scroll()
     }
-  });
-  
+  })
+
+
+
 
 
 
