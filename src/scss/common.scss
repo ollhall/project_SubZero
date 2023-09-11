@@ -24,16 +24,98 @@
     &__choose {
         margin-bottom: rem(145);
     }
-      // .page__reviews
+    // .page__reviews
 
-      &__reviews {
+    &__reviews {
         margin-bottom: rem(250);
     }
-        // .page__brands
+    // .page__brands
 
-        &__brands {
+    &__brands {
+    }
+    // .page__chance
+
+    &__chance {
+        padding-top: rem(251);
+        @media (max-width: $mobile) {
+            margin-bottom: rem(250);
         }
+    }
+    // .page__category
+
+    &__category {
+        @include adaptiv-value("padding-top", 250, 159, 1);
+        padding-bottom: rem(250);
+    }
+    // .page__why
+
+    &__why {
+        padding-top: rem(230);
+        padding-bottom: rem(250);
+    }
+    // .page__request
+
+    &__request {
+        @include adaptiv-value("padding-top", 250, 230, 1);
+        padding-bottom: rem(250);
+    }
+    // .page__repair-top
+
+    &__repair-top {
+    }
+    // .page__types
+
+    &__types {
+        padding: rem(250) 0;
+    }
+    // .page__choose-two
+
+    &__choose-two {
+        padding: rem(150) 0;
+    }
+    // .page__demand
+
+    &__demand {
+        padding: rem(250) 0;
+        @media (max-width: $mobile) {
+            padding-top: rem(250);
+            padding-bottom: rem(574);
+        }
+    }
+    // .page__nuances
+
+    &__nuances {
+        padding: rem(250) 0;
+    }
+    // .page__call
+
+    &__call {
+        padding: rem(250) 0;
+    }
+    // .page__choose-three
+
+    &__choose-three {
+        padding: rem(250) 0;
+    }
+    // .page__performs
+
+    &__performs {
+        padding: rem(250) 0;
+        @media (max-width: $mobile) {
+            padding-top: rem(250);
+             @include adaptiv-value("padding-bottom", 1300, 480, 1);
+            margin-bottom: rem(200);
+
+        }
+     
+    }
+       // .page__options
+
+       &__options {
+        padding: rem(250) 0;
+    }
 }
+
 //</ОСНОВНОЙ БЛОК>===========================================
 
 //=============================================================

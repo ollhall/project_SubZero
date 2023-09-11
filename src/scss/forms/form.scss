@@ -1,37 +1,63 @@
 .form {
-    max-width: rem(533);
-    background-color: #fff;
-    border-radius: rem(10);
-    display: flex;
-    padding: rem(6);
-    gap: rem(5);
-    position: relative;
-    @media (max-width: em(430)) {
-        flex-direction: column;
+    // .form__item
+
+    &__item {
+        margin: 0 0 rem(20) 0;
     }
-    &__row {
-    }
-    &__column {
-    }
-    &__line {
+
+    // .form__label
+
+    &__label {
+        color: #dadada;
+
+        font-size: rem(16);
+
+        font-weight: 400;
+        line-height: normal;
+        display: block;
+        margin: 0 0 rem(12) 0;
+        span {
+            color: #d71b1b;
+        }
     }
     &__input {
-        height: rem(64);
-        flex: 1 1 auto;
-        padding: 0 rem(20);
-        color: #263238;
-        font-weight: 500;
-        &::placeholder {
-            color: #263238;
-            transition: opacity 0.3s ease 0s;
-        }
-        &:focus::placeholder {
-            opacity: 0;
-        }
-        &._error {
-            box-shadow: 0 0 rem(15) red;
-        }
+        height: rem(50);
+        padding: 0 20px;
+        width: 100%;
+        font-size: rem(16);
+        color: #fff;
+        border: rem(1) solid rgba(255, 255, 255, 0.15);
+        background: #3a3a3a;
+    }
+    textarea.form__input {
+        min-height: rem(100);
+        resize: vertical;
+        padding: rem(10) rem(20);
     }
     &__button {
+        width: 100%;
+        max-width: rem(254);
+        min-height: rem(55);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #dadada;
+        font-size: rem(16);
+        font-weight: 500;
+        line-height: normal;
+        cursor: pointer;
+        margin-top: rem(50);
+        border: rem(1) solid rgba(255, 255, 255, 0.1);
+        background-color: #464646;
+        transition: background-color 0.5s ease 0s;
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $blueColor;
+            }
+        }
+        @media (max-width: $mobileSmall) {
+            max-width: 100%;
+        }
     }
 }
+//==============================
