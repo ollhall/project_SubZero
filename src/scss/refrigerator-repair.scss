@@ -260,6 +260,18 @@
 
 .demand {
     position: relative;
+    background-repeat: no-repeat;
+    background-position: right center;
+    @media (max-width: em(1260)) {
+        background-position: 130% center;
+    }
+    @media (max-width: em(1050)) {
+        background-position: 190% center;
+    }
+    @media (max-width: $tablet) {
+        background-size: contain;
+        background-position: bottom;
+    }
     &::before {
         content: "";
         position: absolute;
@@ -267,15 +279,10 @@
         height: 100%;
         top: 0;
         left: 0;
-        background-image: url(../img/demand-bg.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: right;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(180deg, #f2f2f2 0%, rgba(242, 242, 242, 0) 100%);
         z-index: -1;
-        @media (max-width: $mobile) {
-            background-image: url(../img/demand-bg_2.jpg);
-            background-position: center;
-        }
     }
 
     // .demand__container
@@ -291,6 +298,9 @@
         &:not(:last-child) {
             margin-bottom: em(50, 52);
         }
+        @media (max-width: $tablet) {
+            max-width: 100%;
+        }
     }
 
     // .demand__text
@@ -302,6 +312,9 @@
             &:not(:last-child) {
                 @include adaptiv-value("margin-bottom", 15, 10, 1);
             }
+        }
+        @media (max-width: $tablet) {
+            max-width: 100%;
         }
     }
 }
@@ -485,6 +498,21 @@
     position: relative;
     background-repeat: no-repeat;
     background-position: right;
+
+    @media (max-width: em(1260)) {
+        background-position: 110%;
+    }
+    @media (max-width: em(1050)) {
+        background-position: 119%;
+    }
+    @media (max-width: em(885)) {
+        background-position: 160%;
+     
+    }
+    @media (max-width: em(800)) {
+        background-position: 200%;
+      
+    }
     @media (max-width: $mobile) {
         background-size: contain;
         background-position: right bottom;

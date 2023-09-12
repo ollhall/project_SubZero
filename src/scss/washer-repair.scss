@@ -1,0 +1,138 @@
+.repair-top-washer{
+    &__images-ibg{
+        padding-bottom: prc(462, 350);
+        @media (max-width: $mobile) {
+            width: 100%;
+            justify-self: center;
+        }
+    }
+}
+//=========================
+.call {
+    &__title-washer {
+        max-width: rem(313);
+    }
+}
+//==========================
+
+.day {
+    background: linear-gradient(180deg, #f2f2f2 0%, rgba(242, 242, 242, 0) 100%);
+    // .day__container
+
+    &__container {
+    }
+
+    // .day__body
+
+    &__body {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include adaptiv-value("gap", 84, 20, 1);
+        @media (max-width: $mobile) {
+            flex-direction: column;
+        }
+    }
+
+    // .day__images
+
+    &__images {
+        flex: 0 1 rem(500);
+        img {
+            width: 100%;
+        }
+        @media (max-width: $mobile) {
+            flex: 1;
+        }
+    }
+
+    // .day__content
+
+    &__content {
+        flex: 0 1 rem(397);
+        @media (max-width: $mobile) {
+            flex: 1;
+        }
+    }
+
+    // .day__title
+
+    &__title {
+        max-width: rem(334);
+        &:not(:last-child) {
+            margin-bottom: em(60, 52);
+        }
+    }
+
+    // .day__text
+
+    &__text {
+        line-height: 155%;
+        p {
+            &:not(:last-child) {
+                @include adaptiv-value("margin-bottom", 15, 10, 1);
+            }
+        }
+    }
+}
+//==========================
+
+.issues {
+    background: linear-gradient(180deg, #f2f2f2 0%, rgba(242, 242, 242, 0) 100%);
+    // .issues__container
+
+    &__container {
+    }
+
+    // .issues__title
+
+    &__title {
+        max-width: rem(583);
+        text-align: center;
+        margin: 0 auto;
+        &:not(:last-child) {
+            margin-bottom: em(100, 52);
+        }
+    }
+
+    // .issues__body
+
+    &__body {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        gap: rem(30);
+        @media (max-width: $mobile) {
+            flex-wrap: wrap;
+        }
+    }
+
+    // .issues__column
+
+    &__column {
+    }
+
+    // .issues__list
+
+    &__list {
+        display: grid;
+        gap: rem(30);
+    }
+
+    // .issues__item
+
+    &__item {
+        position: relative;
+        padding-left: rem(24);
+        &::before {
+            content: "";
+            position: absolute;
+            width: rem(5);
+            height: rem(5);
+            border-radius: 50%;
+            background-color: $mainColor;
+            top: rem(9);
+            left: rem(12);
+        }
+    }
+}

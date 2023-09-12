@@ -77,9 +77,9 @@
 
     &__demand {
         padding: rem(250) 0;
-        @media (max-width: $mobile) {
-            padding-top: rem(250);
-            padding-bottom: rem(574);
+        @media (max-width: $tablet) {
+            @include adaptiv-value("padding-bottom", 650, 250, 1);
+            margin-bottom: rem(150);
         }
     }
     // .page__nuances
@@ -103,16 +103,74 @@
         padding: rem(250) 0;
         @media (max-width: $mobile) {
             padding-top: rem(250);
-             @include adaptiv-value("padding-bottom", 1300, 480, 1);
+            @include adaptiv-value("padding-bottom", 1300, 480, 1);
             margin-bottom: rem(200);
-
         }
-     
     }
-       // .page__options
+    // .page__options
 
-       &__options {
+    &__options {
         padding: rem(250) 0;
+    }
+    // .page__standard
+
+    &__standard {
+        padding-top: rem(250);
+        padding-bottom: rem(225);
+        @media (max-width: $tablet) {
+            @include adaptiv-value("padding-bottom", 700, 300, 1);
+            margin-bottom: rem(200);
+        }
+    }
+    // .page__typical
+
+    &__typical {
+        padding: rem(250) 0;
+    }
+    // .page__repair-gas
+
+    &__repair-gas {
+        @include adaptiv-value("padding-top", 368, 241, 1);
+        padding-bottom: rem(250);
+    }
+    // .page__breakdowns
+
+    &__breakdowns {
+        padding: rem(250) 0;
+    }
+    // .page__day
+
+    &__day {
+        padding: rem(250) 0;
+    }
+    // .page__issues
+
+    &__issues {
+        padding: rem(250) 0;
+    }
+    // .page__brands-top
+
+    &__brands-top {
+        @include adaptiv-value("padding-top", 380, 241, 1);
+        padding-bottom: rem(250);
+    }
+    // .page__serve
+
+    &__serve {
+        padding: rem(250) 0;
+    }
+       // .page__locations
+
+       &__locations {
+        padding-top: rem(300);
+        padding-bottom: rem(166);
+        @media (max-width: $tablet) {
+            @include adaptiv-value("padding-bottom", 650, 250, 1);
+            margin-bottom: rem(150);
+        }
+        @media (max-width: $mobile) {
+            padding-top: rem(200);
+        }
     }
 }
 

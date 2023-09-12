@@ -1,0 +1,48 @@
+
+.locations {
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: right 66%;
+    @media (max-width: em(1260)) {
+        background-position: 130% 66%;
+    }
+    @media (max-width: em(1050)) {
+        background-position: 190% 66%;
+    }
+    @media (max-width: $tablet) {
+        background-size: contain;
+        background-position: bottom;
+    }
+    // .locations__container
+
+    &__container {
+    }
+
+    // .locations__title
+
+    &__title {
+        max-width: rem(500);
+        &:not(:last-child) {
+         margin-bottom: em(60, 52);
+        }
+        @media (max-width: $tablet) {
+            max-width: 100%;
+        }
+    }
+
+    // .locations__text
+
+    &__text {
+        max-width: rem(430);
+        line-height: 155%;
+        p {
+            &:not(:last-child) {
+                @include adaptiv-value("margin-bottom", 15, 10, 1);
+            }
+        }
+        @media (max-width: $tablet) {
+            max-width: 100%;
+        }
+    }
+}
+

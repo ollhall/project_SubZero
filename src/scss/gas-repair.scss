@@ -1,0 +1,116 @@
+.repair-gas {
+    // .repair-gas__container
+
+    &__container {
+    }
+
+    // .repair-gas__body
+
+    &__body {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        gap: rem(62);
+        @media (max-width: $mobile) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    // .repair-gas__images
+
+    &__images {
+        img {
+            max-width: rem(498);
+            width: 100%;
+        }
+        @media (max-width: $mobile) {
+            justify-self: center;
+        }
+    }
+
+    // .repair-gas__content
+
+    &__content {
+    }
+
+    // .repair-gas__title
+
+    &__title {
+        &:not(:last-child) {
+            margin-bottom: em(50, 52);
+        }
+    }
+    // .repair-gas__text
+
+    &__text {
+        line-height: 155%;
+        p {
+            &:not(:last-child) {
+                @include adaptiv-value("margin-bottom", 15, 10, 1);
+            }
+        }
+    }
+}
+//=============================
+.choose-three {
+    &__title-gas {
+        &:not(:last-child) {
+            margin-bottom: em(100, 52);
+        }
+    }
+}
+.item-advantages {
+    &__title-gas {
+        max-width: rem(186);
+    }
+}
+//=============================
+
+.breakdowns {
+    background: linear-gradient(180deg, #F2F2F2 0%, rgba(242, 242, 242, 0.00) 100%);
+    // .breakdowns__container
+
+    &__container {
+    }
+
+    // .breakdowns__title
+
+    &__title {
+        &:not(:last-child) {
+         margin-bottom: em(100, 52);
+        }
+    }
+
+    // .breakdowns__body
+
+    &__body {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: rem(40);
+        @media (max-width: $mobile) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    // .breakdowns__columns
+
+    &__columns {
+    }
+
+    // .breakdowns__list
+
+    &__list {
+        display: grid;
+        gap: rem(40);
+    }
+
+    // .breakdowns__item
+
+    &__item {
+        line-height: 155%;
+        padding-bottom: rem(12);
+        border-bottom: rem(1) solid $lightGrayColor;
+    }
+}
+
+
