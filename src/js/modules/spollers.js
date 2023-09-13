@@ -1,5 +1,5 @@
 export function isSpollers() {
-    // Spollers
+  // Spollers
 
     const spollersArray = document.querySelectorAll("[data-spollers]");
   if (spollersArray.length > 0) {
@@ -156,6 +156,8 @@ export function isSpollers() {
     }
   });
 
+
+
   // =================================================================================
   // SlideToggle
   let _slideUp = (target, duration = 500) => {
@@ -246,4 +248,4 @@ export function isSpollers() {
   //   })
 
   // }
-  }
+}

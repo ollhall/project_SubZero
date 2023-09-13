@@ -159,9 +159,9 @@
     &__serve {
         padding: rem(250) 0;
     }
-       // .page__locations
+    // .page__locations
 
-       &__locations {
+    &__locations {
         padding-top: rem(300);
         padding-bottom: rem(166);
         @media (max-width: $tablet) {
@@ -171,6 +171,22 @@
         @media (max-width: $mobile) {
             padding-top: rem(200);
         }
+    }
+    // .page__best
+
+    &__best {
+        @include adaptiv-value("padding-top", 310, 250, 1);
+        padding-bottom: rem(173);
+    }
+    // .page__quality
+
+    &__quality {
+        padding: rem(150) 0;
+    }
+    // .page__contact
+
+    &__contact {
+        padding: rem(250) 0;
     }
 }
 

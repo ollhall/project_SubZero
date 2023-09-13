@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html',{
+"title":""
+})
+
+<body>
+  <div class="wrapper">
+    @@include('html/header.html',{})
+    <main class="page">
+      <section class="page__best best">
+        <div class="best__container">
+          <div class="best__body">
+            <div class="best__images">
+              <img src="@img/best/01.svg" alt="Pictures">
+            </div>
+            <div class="best__content">
+              <h1 class="best__title title">
+                Choose the best repair service
+              </h1>
+              <div class="best__text">
+                <p>
+                  Take the first step towards getting your device back up and running - contact us today. Together we
+                  will make your home appliances look like new!
+                </p>
+              </div>
+              <a class="call__btn _icon-phone" href="#">Call us</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="page__quality quality" style="background-image: url(img/quality-bg.jpg)">
+        <div class="quality__container">
+          <div class="quality__content">
+            <h2 class="quality__title title_white">
+              We offer quality home appliance repairs
+            </h2>
+            <div class="quality__text">
+              <p>
+                Having over 12 years experience of repairing household units our trained technicians successfully solve
+                any problems. The availability of a wide range of best quality parts makes it possible to repair
+                equipment of the most popular brands quickly and efficiently. We`ve been making warranty repairs of
+                refrigerators, ranges, stoves, cooktops, washing machines, dryers, and other appliances in Seattlearea
+                for over a decade. Not a single client has been dissatisfied with our work yet. We are recommended to
+                friends and acquaintances. This attitude is the best proof of the quality of our work.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="page__contact contact">
+        <div class="contact__container">
+          <div class="contact__body">
+            <h2 class="contact__title title">
+              Contact us
+            </h2>
+            <div class="contact__text">
+              <p>
+                Please provide us with your make, a brief description of the problem, and any other details available
+              </p>
+            </div>
+            <form class="contact__form form-contact" action="#">
+              <div class="form-contact__item">
+                <label for="formName" class="form-contact__label">Name<span>*</span></label>
+                <input id="formName" type="text" name="name" class="form-contact__input" required>
+              </div>
+              <div class="form-contact__item">
+                <label for="formPhone" class="form-contact__label">Phone<span>*</span></label>
+                <input id="formPhone" type="tel" name="phone" class="form-contact__input" required>
+              </div>
+              <div class="form-contact__item">
+                <label for="formEmail" class="form-contact__label">E-mail<span>*</span></label>
+                <input id="formEmail" type="email" name="email" class="form-contact__input" required>
+              </div>
+              <div class="form-contact__item">
+                <label for="formMessage" class="form-contact__label">Comment or Message</label>
+                <textarea name="message" id="formMessage" class="form-contact__input"></textarea>
+              </div>
+              <button type="submit" class="form-contact__button">Submit</button>
+            </form>
+          </div>
+        </div>
+      </section> 
+      <section class="page__choose-two choose-two">
+        <div class="choose-two__container">
+          <div class="choose-two__body">
+            <div class="choose-two__content">
+              <h2 class="choose-two__title title">The reason to choose us</h2>
+              <a class="choose-two__btn _icon-arrow-up" href="#" data-da=".choose-two__body,767.98,3">Leave your details
+                for a call back</a>
+            </div>
+            <div class="choose-two__text">
+              <p>
+                It may seem like all appliances are the same. This, however, is not the case. Seattle Sub – Zero Wolf
+                Care appliance repair technicians fully understand how these complex appliances work. We also have the
+                proper equipment to service your appliances, we have an industry leading quality of service guarantee.
+                Additionally, we stock Sub-Zero and Wolf appliance factory replacement parts in inventory. Therefore,
+                we’ll always have the parts required to perform necessary repairs of your appliances, whether that’s a
+                refrigerator, stove, oven, or other major household appliance you need us to service.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="page__team team" style="background-image: url(img/footer-bg.jpg)">
+        <div class="team__container">
+          <div class="team__body">
+            <h2 class="team__title">Our Team</h2>
+            <div class="team__text">
+              <p>
+                Our appliance experts have many years of experience in both servicing appliances and treating our
+                customers right. When your appliance needs work or maintenance, there’s no one better to call that
+                is more trusted and reliable to handle your specific needs. We are appliance repair company Seattle
+                Subzero-Wolf Care Appliance Repair have the experience to get the job done right from the start, and
+                at very competitive and affordable rates. Our goal is to get your Subzero or Wolf back up and
+                running as quickly as possible.
+              </p>
+            </div>
+            <a class="team__btn _icon-arrow-up" href="#">Request Service</a>
+          </div>
+        </div>
+      </section>
+    </main>
+    @@include('html/footer.html',{})
+  </div>
+  @@include('html/popup.html',{})
+  <script src="js/app.min.js"></script>
+</body>
+
+</html>

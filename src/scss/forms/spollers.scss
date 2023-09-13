@@ -24,17 +24,11 @@
     &__sub-item {
       
         @media (min-width: $mobile) {
-            width: 100%;
-            padding: rem(13) rem(27);
-            border-top: 1px solid transparent;
-            border-bottom: 1px solid transparent;
-            transition: all 0.3s ease 0s;
+        
+          
+          
             @media (any-hover: hover) {
-                &:hover {
-                    border-top: 1px solid #9e9e9e;
-                    border-bottom: 1px solid #9e9e9e;
-                    background: #f2f2f2;
-                }
+              
             }
         }
     }
@@ -42,7 +36,17 @@
     // .menu__sub-link
 
     &__sub-link {
-       
+        display: block;
+        width: 100%;
+        padding: rem(13) rem(27);
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid transparent;
+        transition: all 0.3s ease 0s;
+        &:hover {
+            border-top: 1px solid #9e9e9e;
+            border-bottom: 1px solid #9e9e9e;
+            background: #f2f2f2;
+        }
     }
 }
 .spollers-menu {

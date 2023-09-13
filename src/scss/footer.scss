@@ -6,7 +6,7 @@
     &__container {
         @media (max-width: em(370)) {
             padding: 0 rem(15);
-          }
+        }
     }
     &__top {
         position: relative;
@@ -45,8 +45,8 @@
         align-items: center;
         gap: rem(20);
         @media (max-width: $mobileSmall) {
-           justify-content: center;
-           margin-bottom: rem(50);
+            justify-content: center;
+            margin-bottom: rem(50);
         }
     }
     // .footer__body
@@ -161,6 +161,12 @@
         font-size: rem(18);
         font-weight: 500;
         line-height: 155%;
+
+        @media (any-hover: hover) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 
     // .contact-column__email
@@ -175,6 +181,12 @@
             font-size: rem(16);
         }
         margin-bottom: rem(50);
+
+        @media (any-hover: hover) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 
     // .contact-column__btn
@@ -227,11 +239,25 @@
     // .repair-column__item
 
     &__item {
+        @media (any-hover: hover) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 
     // .repair-column__link
 
     &__link {
+    }
+}
+.repair {
+    &__btn {
+        @media (any-hover: hover) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 }
 .brands-column {
@@ -248,6 +274,11 @@
     // .brands-column__item
 
     &__item {
+        @media (any-hover: hover) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 
     // .brands-column__link
@@ -259,6 +290,11 @@
     // .brands__btn
 
     &__btn {
+        @media (any-hover: hover) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 }
 .areas-column {
@@ -275,6 +311,11 @@
     // .areas-column__item
 
     &__item {
+        @media (any-hover: hover) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 
     // .areas-column__link
@@ -286,6 +327,11 @@
     // .areas__btn
 
     &__btn {
+        @media (any-hover: hover) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 }
 .column__list {

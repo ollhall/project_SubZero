@@ -4,7 +4,7 @@
     width: 100%;
     left: 0;
     top: 0;
-    transition: all 0.3s ease 0s;
+    transition: background-color 0.3s ease 0s;
     z-index: 50;
     background-color: transparent;
     &._header-scroll {
@@ -18,16 +18,12 @@
     // .header__container
 
     &__container {
-        @media (max-width: em(370)) {
-            padding: 0 rem(15);
-        }
     }
 
     // .header__wrapper
 
     &__wrapper {
     }
-
     // .header__top
 
     &__top {
@@ -38,12 +34,10 @@
         @include adaptiv-value("padding-top", 35, 30, 1);
         @include adaptiv-value("padding-bottom", 35, 30, 1);
     }
-
     // .header__logo
 
     &__logo {
     }
-
     // .header__phone
 
     &__phone {
@@ -103,10 +97,6 @@
     }
 }
 
-.header-logo {
-}
-.icon-menu {
-}
 .menu {
     // .menu__body
 
@@ -163,9 +153,6 @@
 
     &__item {
         position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         white-space: nowrap;
         text-align: center;
         color: $blackColor;
@@ -177,33 +164,11 @@
                 }
             }
         }
-        &_1 {
-            @media (min-width: $mobile) {
-                flex: 1 1 rem(175);
-            }
-        }
-        &_2 {
-            @media (min-width: $mobile) {
-                flex: 1 1 rem(246);
-            }
-        }
-        &_3 {
-            @media (min-width: $mobile) {
-                flex: 1 1 rem(169);
-            }
-        }
-        &_4 {
-            @media (min-width: $mobile) {
-                flex: 1 1 rem(220);
-            }
-        }
-        &_5 {
-            @media (min-width: $mobile) {
-                flex: 1 1 rem(175);
-            }
-        }
 
         @media (min-width: $mobile) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             margin-right: rem(-1);
             border-left: rem(0.5) solid $lightGrayColor;
             border-right: rem(0.5) solid $lightGrayColor;
@@ -219,6 +184,21 @@
                 width: 100%;
                 transition: all 0.3s ease 0s;
             }
+            &_1 {
+                flex: 1 1 rem(175);
+            }
+            &_2 {
+                flex: 1 1 rem(246);
+            }
+            &_3 {
+                flex: 1 1 rem(169);
+            }
+            &_4 {
+                flex: 1 1 rem(220);
+            }
+            &_5 {
+                flex: 1 1 rem(175);
+            }
             &_active {
                 background-color: $blueColor;
                 color: #fff;
@@ -229,11 +209,100 @@
             max-width: rem(315);
             width: 100%;
         }
+        &.active .spoller__list {
+            display: grid;
+        }
+        &.active .spoller__title::before {
+            transform: rotate(90deg);
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                .spoller__list {
+                    display: block;
+                }
+                .spoller__title::before {
+                    transform: rotate(90deg);
+                }
+                &:focus {
+                    .spoller__list {
+                        display: block;
+                    }
+                }
+                &:focus-within {
+                    .spoller__list {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.spoller {
+    // .spoller__title
+
+    &__title {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        &::before {
+            font-size: rem(9);
+            margin-left: rem(7);
+            color: $mainColor;
+            transition: transform 0.3s ease 0s;
+        }
+
+        @media (max-width: $mobile) {
+            justify-content: center;
+        }
     }
 
-    // .menu__link
+    &__list {
+        display: none;
+        color: $blackColor;
+        font-size: rem(16);
+        font-weight: 400;
+        line-height: normal;
+        z-index: 2;
+        @media (min-width: $mobile) {
+            position: absolute;
+            border: rem(1) solid $lightGrayColor;
+            background-color: #fff;
+            left: rem(0);
+            right: 0;
+            top: 100%;
+            z-index: 5;
+        }
+        @media (max-width: $mobile) {
+            gap: rem(40);
+            text-align: center;
+            margin-top: rem(68);
+        }
+    }
+    // .spoller__item
+
+    &__item {
+        color: $blackColor;
+        line-height: normal;
+    }
+    // .spoller__link
 
     &__link {
+        @media (min-width: $mobile) {
+            display: block;
+            width: 100%;
+            padding: rem(13) rem(27);
+            border-top: 1px solid transparent;
+            border-bottom: 1px solid transparent;
+            transition: all 0.3s ease 0s;
+            @media (any-hover: hover) {
+                &:hover {
+                    border-top: 1px solid #9e9e9e;
+                    border-bottom: 1px solid #9e9e9e;
+                    background: #f2f2f2;
+                }
+            }
+        }
     }
 }
 

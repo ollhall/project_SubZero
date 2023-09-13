@@ -25,11 +25,11 @@ flsdynamicAdapt.isdynamicAdapt();
 // import * as flsSpoller from './modules/spoller.js'
 // flsSpoller.isSpoller()
 
-import * as flsSpollers from "./modules/spollers.js";
-flsSpollers.isSpollers();
+// import * as flsSpollers from "./modules/spollers.js";
+// flsSpollers.isSpollers();
 
-// import * as flsAriaExpanded from './modules/aria-expanded.js'
-// flsAriaExpanded.isAriaExpanded()
+import * as flsAriaExpanded from './modules/aria-expanded.js'
+flsAriaExpanded.isAriaExpanded()
 
 // import * as flsSearch from './modules/search.js'
 // flsSearch.isSearch()
@@ -37,8 +37,8 @@ flsSpollers.isSpollers();
 // import * as flsRating from "./modules/rating.js";
 // flsRating.isRating();
 
-// import * as flsPopup from "./modules/popup.js";
-// flsPopup.isPopup();
+import * as flsPopup from "./modules/popup.js";
+flsPopup.isPopup();
 
 // import * as flsSelect from "./modules/select.js";
 // flsSelect.isSelect();

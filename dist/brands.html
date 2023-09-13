@@ -10,125 +10,94 @@
 
 <body>
   <div class="wrapper">
-    <header class="header">
-
-
+    <header class="header lock-padding">
     <div class="header__container">
         <div class="header__wrapper">
             <div class="header__top">
                 <a class="header__logo header-logo" href="index.html">
                     <img src="img/header-logo.svg" alt="Logotype">
                 </a>
-                <a class="header__phone _icon-phone" href="tel:2062086717" data-da=".menu__body,767.98,3">206-208-6717</a>
-                <a class="header__service-btn _icon-service" href="#" data-da=".menu__body,767.98,2">Request service</a>
+                <a class="header__phone _icon-phone" href="tel:2062086717"
+                    data-da=".menu__body,767.98,3">206-208-6717</a>
+                <a class="header__service-btn _icon-service popup-link" href="#popup-request"
+                    data-da=".menu__body,767.98,2">Request service</a>
                 <button type="button" class="icon-menu">
                     <span></span>
                 </button>
             </div>
-
             <div class="header__menu menu">
-                <nav class="menu__body">
+                <nav class="menu__body" aria-label="Main menu">
                     <ul class="menu__list">
-                        <li class="menu__item menu__item_1 menu__item_active"><a href="#" class="menu__link">About Us</a></li>
+                        <li class="menu__item menu__item_1 menu__item_active">
+                            <a href="index.html" class="menu__link">About Us</a>
+                        </li>
                         <li class="menu__item menu__item_2">
-                            <div class="menu__spollers spollers-menu" data-spollers>
-                                <div class="spollers-menu__item">
-                                    <button class="spollers-menu__title _icon-arrow-spol" type="button"
-                                        data-spoller>Appliance Repair</button>
-                                    <div class="spollers-menu__body">
-                                        <ul class="menu__sub-list">
-                                            <li class="menu__sub-item">
-                                                <a class="menu__sub-link" href="refrigerator-repair.html">Refrigerator Repair</a>
-                                            </li>
-                                            <li class="menu__sub-item">
-                                                <a class="menu__sub-link" href="oven-repair.html">Oven & Stove Repair</a>
-                                            </li>
-                                            <li class="menu__sub-item">
-                                                <a class="menu__sub-link" href="gas-repair.html">Electric/Gas Cooktop</a>
-                                            </li>
-                                            <li class="menu__sub-item">
-                                                <a class="menu__sub-link" href="washer-repair.html">Washer/Dryer Repair</a>
-                                            </li>
-                                        </ul>
-                                        <a class="show-more__btn _icon-more" href="appliance-repair.html">Appliance Repair</a>
-                                    </div>
-                                </div>
-                            </div>
+                            <a class="spoller__title _icon-arrow-right" href="#">Appliance Repair</a>
+                            <ul class="spoller__list" aria-label="Submenu Appliance Repair">
+                                <li class="spoller__item"><a class="spoller__link"
+                                        href="refrigerator-repair.html">Refrigerator Repair</a>
+                                </li>
+                                <li class="spoller__item"><a class="spoller__link" href="oven-repair.html">Oven &
+                                        Stove Repair</a>
+                                </li>
+                                <li class="spoller__item"><a class="spoller__link" href="gas-repair.html">Electric/Gas
+                                        Cooktop</a></li>
+                                <li class="spoller__item"><a class="spoller__link"
+                                        href="washer-repair.html">Washer/Dryer Repair</a></li>
+                                <li>
+                                    <a class="show-more__btn _icon-more" href="appliance-repair.html">Appliance
+                                        Repair</a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="menu__item menu__item_3">
-                            <div class="menu__spollers spollers-menu" data-spollers>
-                                <div class="spollers-menu__item">
-                                    <button class="spollers-menu__title _icon-arrow-spol" type="button"
-                                        data-spoller>Brands</button>
-                                    <div class="spollers-menu__body">
-                                        <ul class="menu__sub-list menu__sub-list-brand">
-                                            <li class="menu__sub-item menu__sub-item-brand">
-                                                <a class="menu__sub-link" href="#">Sub-Zero</a>
-                                            </li>
-                                            <li class="menu__sub-item menu__sub-item-brand">
-                                                <a class="menu__sub-link" href="#">Thermador</a>
-                                            </li>
-                                            <li class="menu__sub-item menu__sub-item-brand">
-                                                <a class="menu__sub-link" href="#">Viking</a>
-                                            </li>
-                                            <li class="menu__sub-item menu__sub-item-brand">
-                                                <a class="menu__sub-link" href="#">Wolf</a>
-                                            </li>
-                                            <li class="menu__sub-item menu__sub-item-brand">
-                                                <a class="menu__sub-link" href="#">Bertazzoni</a>
-                                            </li>
-                                            <li class="menu__sub-item menu__sub-item-brand">
-                                                <a class="menu__sub-link" href="#">Monogram</a>
-                                            </li>
-                                            <li class="menu__sub-item menu__sub-item-brand">
-                                                <a class="menu__sub-link" href="#">Dacor</a>
-                                            </li>
-                                        </ul>
-                                        <a class="show-more__btn _icon-more" href="brands.html">More brands</a>
-                                    </div>
-                                </div>
-                            </div>
+                            <a class="spoller__title _icon-arrow-right" href="#">Brands</a>
+                            <ul class="spoller__list" aria-label="Submenu Brands">
+                                <li class="spoller__item"><a class="spoller__link" href="#">Sub-Zero</a>
+                                </li>
+                                <li class="spoller__item"><a class="spoller__link" href="#">Thermador</a>
+                                </li>
+                                <li class="spoller__item"><a class="spoller__link" href="#">Viking</a>
+                                </li>
+                                <li class="spoller__item"><a class="spoller__link" href="#">Wolf</a>
+                                </li>
+                                <li class="spoller__item"><a class="spoller__link" href="#">Bertazzoni</a>
+                                </li>
+                                <li class="spoller__item"><a class="spoller__link" href="#">Monogram</a>
+                                </li>
+                                <li class="spoller__item"><a class="spoller__link" href="#">Dacor</a>
+                                </li>
+                                <li>
+                                    <a class="show-more__btn _icon-more" href="brands.html">More brands</a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="menu__item menu__item_4">
-                            <div class="menu__spollers spollers-menu" data-spollers>
-                                <div class="spollers-menu__item">
-                                    <button class="spollers-menu__title _icon-arrow-spol" type="button"
-                                        data-spoller>Service areas</button>
-                                    <div class="spollers-menu__body">
-                                        <ul class="menu__sub-list">
-                                            <li class="menu__sub-item">
-                                                <a class="menu__sub-link" href="#">Seattle</a>
-                                            </li>
-                                            <li class="menu__sub-item">
-                                                <a class="menu__sub-link" href="#">Bellevue</a>
-                                            </li>
-                                            <li class="menu__sub-item">
-                                                <a class="menu__sub-link" href="#">Redmond</a>
-                                            </li>
-                                            <li class="menu__sub-item">
-                                                <a class="menu__sub-link" href="#">Issaquah</a>
-                                            </li>
-                                            <li class="menu__sub-item">
-                                                <a class="menu__sub-link" href="#">Mercer Island</a>
-                                            </li>
-                                            <li class="menu__sub-item">
-                                                <a class="menu__sub-link" href="#">Sammamish</a>
-                                            </li>
-                                            <li class="menu__sub-item">
-                                                <a class="menu__sub-link" href="#">Kirkland</a>
-                                            </li>
-                                        </ul>
-                                        <a class="show-more__btn _icon-more" href="areas.html">More areas</a>
-                                    </div>
-                                </div>
-                            </div>
+                            <a class="spoller__title _icon-arrow-right" href="#">Service areas</a>
+                            <ul class="spoller__list" aria-label="Submenu Service areas">
+                                <li class="spoller__item"><a class="spoller__link" href="#">Seattle</a>
+                                </li>
+                                <li class="spoller__item"><a class="spoller__link" href="#">Bellevue</a>
+                                </li>
+                                <li class="spoller__item"><a class="spoller__link" href="#">Redmond</a>
+                                </li>
+                                <li class="spoller__item"><a class="spoller__link" href="#">Issaquah</a>
+                                </li>
+                                <li class="spoller__item"><a class="spoller__link" href="#">Mercer Island</a>
+                                </li>
+                                <li class="spoller__item"><a class="spoller__link" href="#">Sammamish</a>
+                                </li>
+                                <li class="spoller__item"><a class="spoller__link" href="#">Kirkland</a>
+                                </li>
+                                <li>
+                                    <a class="show-more__btn _icon-more" href="areas.html">More areas</a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="menu__item menu__item_5"><a href="contacts.html" class="menu__link">Contacts</a></li>
                     </ul>
                 </nav>
             </div>
-
-          
         </div>
     </div>
 
@@ -741,7 +710,7 @@
                             <a class="repair-column__link" href="washer-repair.html">Washer & Dryer Repair</a>
                         </li>
                     </ul>
-                    <a class="appliance__btn footer__btn _icon-arrow-up" href="appliance-repair.html">Appliance Repair</a>
+                    <a class="repair__btn footer__btn _icon-arrow-up" href="appliance-repair.html">Appliance Repair</a>
                 </div>
 
 

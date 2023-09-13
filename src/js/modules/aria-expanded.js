@@ -1,20 +1,117 @@
 export function isAriaExpanded() {
-  const mainMenu = document.querySelector('nav[aria-label="Главное меню"]');
+  // Получить все элементы с классом menu__item
+  const menuItems2 = document.querySelectorAll(".menu__item");
+  let openedItem = null;
+
+  // Перебрать элементы и добавить обработчики событий
+  menuItems2.forEach((item) => {
+    let timeoutId;
+
+    // Функция для обработки события наведения курсора на десктопе
+    const handleMouseEnter = () => {
+      clearTimeout(timeoutId);
+      item.classList.add("active");
+      item
+        .querySelector(".spoller__title")
+        .setAttribute("aria-expanded", "true");
+    };
+
+    // Функция для обработки события покидания курсора на десктопе
+    const handleMouseLeave = () => {
+      timeoutId = setTimeout(() => {
+        item.classList.remove("active");
+        item
+          .querySelector(".spoller__title")
+          .setAttribute("aria-expanded", "false");
+      }, 200);
+    };
+
+    // Функция для обработки события клика на устройстве
+    const handleClick = () => {
+      if (item.classList.contains("active")) {
+        item.classList.remove("active");
+        item
+          .querySelector(".spoller__title")
+          .setAttribute("aria-expanded", "false");
+        openedItem = null;
+      } else {
+        if (openedItem) {
+          openedItem.classList.remove("active");
+          openedItem
+            .querySelector(".spoller__title")
+            .setAttribute("aria-expanded", "false");
+        }
+        item.classList.add("active");
+        item
+          .querySelector(".spoller__title")
+          .setAttribute("aria-expanded", "true");
+        openedItem = item;
+      }
+      item.focus();
+    };
+
+    // Проверка, является ли устройство мобильным
+    const isMobileDevice = () => {
+      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+      );
+    };
+
+    // Добавление обработчиков событий в зависимости от типа устройства
+    if (isMobileDevice()) {
+      item.addEventListener("click", handleClick);
+    } else {
+      item.addEventListener("mouseenter", handleMouseEnter);
+      item.addEventListener("mouseleave", handleMouseLeave);
+      item.addEventListener("click", handleClick);
+    }
+  });
+
+  // Обработчик клика на документе
+  document.addEventListener("click", (event) => {
+    const target = event.target;
+    const isMenuClicked = Array.from(menuItems2).some((item) =>
+      item.contains(target)
+    );
+    if (!isMenuClicked && openedItem) {
+      openedItem.classList.remove("active");
+      openedItem
+        .querySelector(".spoller__title")
+        .setAttribute("aria-expanded", "false");
+      openedItem = null;
+    }
+  });
+
+  const menuTitle = document.querySelectorAll(".spoller__title");
+
+  menuTitle.forEach((item) => {
+    item.setAttribute("aria-haspopup", "true");
+    item.setAttribute("aria-expanded", "false");
+  });
+
+  const mainMenu = document.querySelector('nav[aria-label="Main menu"]');
   const menuItems = mainMenu.querySelectorAll('a[aria-haspopup="true"]');
 
   // Обработчик события клика на ссылке верхнего уровня
   function handleClick(event) {
     event.preventDefault();
     const menuItem = event.currentTarget;
-    const isExpanded = menuItem.getAttribute("aria-expanded") === "true";
-    menuItem.setAttribute("aria-expanded", !isExpanded);
+    const isExpanded =
+      menuItem
+        .querySelector(".spoller__title")
+        .getAttribute("aria-expanded") === "true";
+    menuItem
+      .querySelector(".spoller__title")
+      .setAttribute("aria-expanded", !isExpanded);
   }
 
   // Обработчик события клика вне меню
   function handleOutsideClick(event) {
     if (!mainMenu.contains(event.target)) {
       menuItems.forEach((item) => {
-        item.setAttribute("aria-expanded", "false");
+        item
+          .querySelector(".spoller__title")
+          .setAttribute("aria-expanded", "false");
       });
     }
   }
@@ -25,69 +122,29 @@ export function isAriaExpanded() {
 
   document.addEventListener("click", handleOutsideClick);
 
-  //Burger
+  // Обработчик события изменения размеров окна
+  let resizeTimer;
 
-  const menuButton = document.querySelector(".icon-menu");
-  const menuList = document.querySelector(".menu__body");
-
-  menuButton.addEventListener("click", function () {
-    const expanded = this.getAttribute("aria-expanded") === "true" || false;
-    this.setAttribute("aria-expanded", !expanded);
-    menuList.setAttribute("aria-hidden", expanded);
+  window.addEventListener("resize", () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      menuItems2.forEach((item) => {
+        if (isMobileDevice()) {
+          item.removeEventListener("mouseenter", handleMouseEnter);
+          item.removeEventListener("mouseleave", handleMouseLeave);
+          item.removeEventListener("click", handleClick);
+          item.addEventListener("click", handleClick);
+        } else {
+          item.removeEventListener("click", handleClick);
+          item.removeEventListener("mouseenter", handleMouseEnter);
+          item.removeEventListener("mouseleave", handleMouseLeave);
+          item.addEventListener("mouseenter", handleMouseEnter);
+          item.addEventListener("mouseleave", handleMouseLeave);
+          item.addEventListener("click", handleClick);
+        }
+      });
+    }, 200);
   });
-
-  // const navToggle = document.getElementById("nav-toggle");
-  // const nav = document.querySelector(".panel__nav");
-
-  // if (nav) {
-  //   navToggle.addEventListener("change", function () {
-  //     if (this.checked) {
-  //       nav.setAttribute("aria-expanded", "true");
-  //       navToggle.setAttribute("aria-expanded", "true");
-  //     } else {
-  //       nav.setAttribute("aria-expanded", "false");
-  //       navToggle.setAttribute("aria-expanded", "false");
-  //     }
-  //   });
-
-  //   const navLabel = document.querySelector(".nav-toggle");
-  //   navLabel.setAttribute("aria-controls", "nav-toggle");
-  //   navLabel.setAttribute("aria-expanded", "false");
-  // }
-
-
-
-
-//=====Боковое меню==================
-// Получаем ссылки на элементы
-const navToggle = document.querySelector('.nav-toggle');
-const sidePanel = document.querySelector('.slide-side-panel');
-const wrapper = document.querySelector('.slide-side-panel__wrapper');
-const body = document.querySelector('body');
-
-// Функция, которая открывает или закрывает меню
-function toggleMenu() {
-  sidePanel.classList.toggle('open');
-  body.classList.toggle('menu-open');
-  navToggle.classList.toggle('change-img');
-
-  const expanded = sidePanel.classList.contains('open');
-  navToggle.setAttribute('aria-expanded', expanded.toString());
-
-  if (expanded) {
-    wrapper.removeAttribute('hidden');
-  } else {
-    setTimeout(() => {
-      wrapper.setAttribute('hidden', '');
-    }, 500);
-  }
-
-  sidePanel.setAttribute('aria-hidden', (!expanded).toString());
-}
-
-// Назначаем обработчик клика на кнопку
-navToggle.addEventListener('click', toggleMenu);
-
 
 
 
