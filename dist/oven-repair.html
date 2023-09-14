@@ -524,7 +524,39 @@
     </div>
 </footer>
   </div>
-  
+  <div class="popup-request popup" id="popup-request">
+    <div class="popup-request__body">
+        <div class="popup-request__content popup__content">
+            <button class="popup-request__btn-close close-popup"></button>
+            <h3 class="popup-request__title">Request service</h3>
+            <div class="popup-request__text">
+                Please provide us with your make, a brief description of the problem, and any other details
+                available
+            </div>
+            <form class="popup-request__form form-request">
+                <div class="form-request__wrapper">
+                    <div class="form-request__item">
+                        <label for="formName" class="form-request__label">Name<span>*</span></label>
+                        <input id="formName" type="text" name="name" class="form-request__input" required>
+                    </div>
+                    <div class="form-request__item">
+                        <label for="formPhone" class="form-request__label">Phone<span>*</span></label>
+                        <input id="formPhone" type="tel" name="phone" class="form-request__input" required>
+                    </div>
+                </div>
+                <div class="form-request__item">
+                    <label for="formEmail" class="form-request__label">E-mail<span>*</span></label>
+                    <input id="formEmail" type="email" name="email" class="form-request__input" required>
+                </div>
+                <div class="form-request__item">
+                    <label for="formMessage" class="form-request__label">Comment or Message</label>
+                    <textarea name="message" id="formMessage" class="form-request__input"></textarea>
+                </div>
+                <button type="submit" class="form-request__button">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
   <script src="js/app.min.js"></script>
 </body>
 

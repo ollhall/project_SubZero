@@ -342,3 +342,9 @@
         font-size: rem(16);
     }
 }
+.social {
+    &__item a img {
+        width: rem(15);
+        height: rem(15);
+    }
+}

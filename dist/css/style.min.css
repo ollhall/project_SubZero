@@ -1529,6 +1529,11 @@ body._lock {
   }
 }
 
+.social__item a img {
+  width: 0.9375rem;
+  height: 0.9375rem;
+}
+
 .main {
   background-repeat: no-repeat;
   background-size: cover;
