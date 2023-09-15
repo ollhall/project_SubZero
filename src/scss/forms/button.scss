@@ -8,6 +8,7 @@
     color: $mainColor;
     transition: all 0.3s ease 0s;
     &::before {
+        font-size: rem(10);
         transition: color 0.3s ease 0s;
         margin-left: rem(8);
         color: $lightGrayColor;
@@ -24,6 +25,9 @@
     @media (min-width: $mobile) {
         border-top: rem(1) solid $lightGrayColor;
         background-color: #f2f2f2;
+    }
+    @media (max-width: $mobile) {
+        font-size: rem(18);
     }
 }
 .footer {

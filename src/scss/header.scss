@@ -7,13 +7,18 @@
     transition: background-color 0.3s ease 0s;
     z-index: 50;
     background-color: transparent;
+
     &._header-scroll {
         background-color: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 rem(4) rem(21) 0 rgba(198, 198, 198, 0.25);
         @media (min-width: $mobile) {
             .header__top {
                 display: none;
             }
         }
+    }
+    @media (max-width: $mobile) {
+        box-shadow: 0 rem(4) rem(21) 0 rgba(198, 198, 198, 0.25);
     }
     // .header__container
 
@@ -98,6 +103,10 @@
 }
 
 .menu {
+    @media (max-width: $tablet) {
+        margin-left: rem(-20);
+        margin-right: rem(-20);
+    }
     // .menu__body
 
     &__body {
@@ -157,10 +166,13 @@
         text-align: center;
         color: $blackColor;
         font-weight: 600;
+        transition: all 0.3s ease 0s;
         @media (any-hover: hover) {
             &:hover {
-                &::before {
-                    border-bottom: rem(4) solid $blueColor;
+                background-color: $blueColor;
+                color: #fff;
+                .spoller__title::before {
+                    color: #fff;
                 }
             }
         }
@@ -182,32 +194,34 @@
                 left: 0;
                 bottom: 0;
                 width: 100%;
-                transition: all 0.3s ease 0s;
             }
             &_1 {
-                flex: 1 1 rem(175);
+                flex: 1 1 rem(172);
             }
             &_2 {
                 flex: 1 1 rem(246);
             }
             &_3 {
-                flex: 1 1 rem(169);
+                flex: 1 1 rem(175);
             }
             &_4 {
                 flex: 1 1 rem(220);
             }
             &_5 {
-                flex: 1 1 rem(175);
+                flex: 1 1 rem(172);
             }
             &_active {
-                background-color: $blueColor;
-                color: #fff;
+                &::before {
+                    border-bottom: rem(4) solid $blueColor;
+                }
             }
         }
 
         @media (max-width: $mobile) {
             max-width: rem(315);
             width: 100%;
+            font-size: rem(23);
+            font-weight: 600;
         }
         &.active .spoller__list {
             display: grid;
@@ -246,9 +260,9 @@
         flex-direction: row-reverse;
         align-items: center;
         &::before {
-            font-size: rem(9);
+            font-size: rem(10);
             margin-left: rem(7);
-            color: $mainColor;
+            color: $blackColor;
             transition: transform 0.3s ease 0s;
         }
 
@@ -284,6 +298,9 @@
     &__item {
         color: $blackColor;
         line-height: normal;
+        @media (max-width: $mobile) {
+            font-size: rem(18);
+        }
     }
     // .spoller__link
 
@@ -291,7 +308,7 @@
         @media (min-width: $mobile) {
             display: block;
             width: 100%;
-            padding: rem(13) rem(27);
+            padding: rem(13) rem(0);
             border-top: 1px solid transparent;
             border-bottom: 1px solid transparent;
             transition: all 0.3s ease 0s;

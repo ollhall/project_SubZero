@@ -7,6 +7,23 @@
     &__team {
         padding: rem(200) 0;
     }
+    &__single-block,
+    &__single-info,
+    &__types,
+    &__choose-two,
+    &__nuances,
+    &__call,
+    &__choose-three,
+    &__options,
+    &__breakdowns,
+    &__day,
+    &__issues,
+    &__typical,
+    &__serve,
+    &__quality,
+    &__contact {
+        padding: rem(250) 0;
+    }
     // .page__main
 
     &__main {
@@ -24,8 +41,6 @@
     &__choose {
         margin-bottom: rem(145);
     }
-    // .page__reviews
-
     &__reviews {
         margin-bottom: rem(250);
     }
@@ -63,16 +78,7 @@
 
     &__repair-top {
     }
-    // .page__types
 
-    &__types {
-        padding: rem(250) 0;
-    }
-    // .page__choose-two
-
-    &__choose-two {
-        padding: rem(150) 0;
-    }
     // .page__demand
 
     &__demand {
@@ -82,21 +88,7 @@
             margin-bottom: rem(150);
         }
     }
-    // .page__nuances
 
-    &__nuances {
-        padding: rem(250) 0;
-    }
-    // .page__call
-
-    &__call {
-        padding: rem(250) 0;
-    }
-    // .page__choose-three
-
-    &__choose-three {
-        padding: rem(250) 0;
-    }
     // .page__performs
 
     &__performs {
@@ -107,11 +99,7 @@
             margin-bottom: rem(200);
         }
     }
-    // .page__options
 
-    &__options {
-        padding: rem(250) 0;
-    }
     // .page__standard
 
     &__standard {
@@ -122,43 +110,21 @@
             margin-bottom: rem(200);
         }
     }
-    // .page__typical
 
-    &__typical {
-        padding: rem(250) 0;
-    }
     // .page__repair-gas
 
     &__repair-gas {
         @include adaptiv-value("padding-top", 368, 241, 1);
         padding-bottom: rem(250);
     }
-    // .page__breakdowns
 
-    &__breakdowns {
-        padding: rem(250) 0;
-    }
-    // .page__day
-
-    &__day {
-        padding: rem(250) 0;
-    }
-    // .page__issues
-
-    &__issues {
-        padding: rem(250) 0;
-    }
     // .page__brands-top
 
     &__brands-top {
         @include adaptiv-value("padding-top", 380, 241, 1);
         padding-bottom: rem(250);
     }
-    // .page__serve
 
-    &__serve {
-        padding: rem(250) 0;
-    }
     // .page__locations
 
     &__locations {
@@ -178,15 +144,12 @@
         @include adaptiv-value("padding-top", 310, 250, 1);
         padding-bottom: rem(173);
     }
-    // .page__quality
 
-    &__quality {
-        padding: rem(150) 0;
-    }
-    // .page__contact
+    // .page__single
 
-    &__contact {
-        padding: rem(250) 0;
+    &__single-top {
+        @include adaptiv-value("padding-top", 380, 150, 1);
+        padding-bottom: rem(250);
     }
 }
 
@@ -206,6 +169,12 @@
         font-weight: 700;
         line-height: 120%;
     }
+}
+.title-litle {
+    color: $blackColor;
+    font-size: rem(41);
+    font-weight: 700;
+    line-height: normal;
 }
 .footer-title {
     color: #fff;
