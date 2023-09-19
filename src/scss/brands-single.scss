@@ -66,6 +66,36 @@
     }
 }
 //=====================================
+
+.single-content {
+    background: linear-gradient(180deg, #f2f2f2 0%, rgba(242, 242, 242, 0) 100%);
+    // .single-content__container
+
+    &__container {
+    }
+
+    // .single-content__title
+
+    &__title {
+        &:not(:last-child) {
+            margin-bottom: em(50, 41);
+        }
+    }
+
+    // .single-content__text
+
+    &__text {
+        line-height: 155%;
+        
+        p {
+            &:not(:last-child) {
+                @include adaptiv-value("margin-bottom", 15, 10, 1);
+            }
+        }
+    }
+}
+
+//=====================================
 .single-block {
     background: linear-gradient(180deg, #f2f2f2 0%, rgba(242, 242, 242, 0) 100%);
     // .single-block__container
@@ -147,7 +177,7 @@
     // .single-info__column
 
     &__column {
-        flex: 0 1 rem(438);
+        flex: 0 1 50%;
     }
 
     // .single-info__title
