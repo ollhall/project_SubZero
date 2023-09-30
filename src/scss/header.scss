@@ -101,6 +101,18 @@
     &__menu {
     }
 }
+@media (max-width: $mobile) {
+    .header__phone,
+    .header__service-btn {
+        display: none;
+        transition: opacity 0.3s ease-in-out;
+    }
+
+    .header__phone.loaded,
+    .header__service-btn.loaded {
+        display: flex;
+    }
+}
 
 .menu {
     @media (max-width: $tablet) {
@@ -149,11 +161,26 @@
     &__list {
         display: flex;
         align-items: center;
+        @media (min-width: $mobile) {
+            li:first-child {
+                flex: 1 1 rem(172);
+            }
+            li:nth-child(2) {
+                flex: 1 1 rem(246);
+            }
+            li:nth-child(3) {
+                flex: 1 1 rem(175);
+            }
+            li:nth-child(4) {
+                flex: 1 1 rem(220);
+            }
+            li:nth-child(5) {
+                flex: 1 1 rem(172);
+            }
+        }
         @media (max-width: $mobile) {
             flex-direction: column;
             gap: rem(100);
-        }
-        @media (max-width: $mobile) {
             margin-bottom: rem(100);
         }
     }
@@ -171,9 +198,6 @@
             &:hover {
                 background-color: $blueColor;
                 color: #fff;
-                .spoller__title::before {
-                    color: #fff;
-                }
             }
         }
 
@@ -195,28 +219,10 @@
                 bottom: 0;
                 width: 100%;
             }
-            &_1 {
-                flex: 1 1 rem(172);
-            }
-            &_2 {
-                flex: 1 1 rem(246);
-            }
-            &_3 {
-                flex: 1 1 rem(175);
-            }
-            &_4 {
-                flex: 1 1 rem(220);
-            }
-            &_5 {
-                flex: 1 1 rem(172);
-            }
-            &_active {
-                &::before {
-                    border-bottom: rem(4) solid $blueColor;
-                }
-            }
         }
-
+        &.active .spoller__title::before {
+            transform: rotate(90deg);
+        }
         @media (max-width: $mobile) {
             max-width: rem(315);
             width: 100%;
@@ -226,16 +232,10 @@
         &.active .spoller__list {
             display: grid;
         }
-        &.active .spoller__title::before {
-            transform: rotate(90deg);
-        }
         @media (any-hover: hover) {
             &:hover {
                 .spoller__list {
                     display: block;
-                }
-                .spoller__title::before {
-                    transform: rotate(90deg);
                 }
                 &:focus {
                     .spoller__list {
@@ -250,19 +250,37 @@
             }
         }
     }
+    &__item:first-child {
+        .spoller__title {
+            &::before {
+                font-size: 0;
+            }
+        }
+    }
+    &__item:last-child {
+        .spoller__title {
+            &::before {
+                font-size: 0;
+            }
+        }
+    }
+}
+
+.menu__list li._active {
+    &::before {
+        border-bottom: rem(4) solid $blueColor;
+    }
 }
 
 .spoller {
-    // .spoller__title
-
     &__title {
+        position: relative;
         display: flex;
-        flex-direction: row-reverse;
         align-items: center;
+        flex-direction: row-reverse;
         &::before {
             font-size: rem(10);
-            margin-left: rem(7);
-            color: $blackColor;
+            margin-left: rem(8);
             transition: transform 0.3s ease 0s;
         }
 
@@ -270,7 +288,6 @@
             justify-content: center;
         }
     }
-
     &__list {
         display: none;
         color: $blackColor;
@@ -293,25 +310,17 @@
             margin-top: rem(68);
         }
     }
-    // .spoller__item
-
     &__item {
         color: $blackColor;
         line-height: normal;
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid transparent;
+        transition: all 0.3s ease 0s;
+
         @media (max-width: $mobile) {
             font-size: rem(18);
         }
-    }
-    // .spoller__link
-
-    &__link {
-        @media (min-width: $mobile) {
-            display: block;
-            width: 100%;
-            padding: rem(13) rem(0);
-            border-top: 1px solid transparent;
-            border-bottom: 1px solid transparent;
-            transition: all 0.3s ease 0s;
+        &:not(:last-child) {
             @media (any-hover: hover) {
                 &:hover {
                     border-top: 1px solid #9e9e9e;
@@ -319,6 +328,53 @@
                     background: #f2f2f2;
                 }
             }
+        }
+    }
+    &__item:last-child {
+        .spoller__link {
+            position: relative;
+            width: 100%;
+            height: rem(40);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row-reverse;
+            color: $mainColor;
+            transition: all 0.3s ease 0s;
+            &::before {
+                font-size: rem(10);
+                margin-left: rem(8);
+            }
+            @media (max-width: $mobile) {
+                &::before {
+                    padding-top: rem(3);
+                }
+            }
+        }
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $lightGrayColor;
+                .spoller__link {
+                    color: #fff;
+                }
+            }
+        }
+        @media (min-width: $mobile) {
+            border-top: rem(1) solid $lightGrayColor;
+            background-color: #f2f2f2;
+        }
+        @media (max-width: $mobile) {
+            font-size: rem(18);
+        }
+    }
+    &__link {
+        &::before {
+            font-size: 0;
+        }
+        @media (min-width: $mobile) {
+            display: block;
+            width: 100%;
+            padding: rem(13) rem(0);
         }
     }
 }
@@ -342,7 +398,7 @@
             transition: all 0.3s ease 0s;
             right: 0;
             position: absolute;
-            width: 100%;
+            width: rem(30);
             height: rem(2);
             background-color: $blackColor;
         }

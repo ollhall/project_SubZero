@@ -1,35 +1,4 @@
-.show-more__btn {
-    width: 100%;
-    height: rem(40);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: row-reverse;
-    color: $mainColor;
-    transition: all 0.3s ease 0s;
-    &::before {
-        font-size: rem(10);
-        transition: color 0.3s ease 0s;
-        margin-left: rem(8);
-        color: $lightGrayColor;
-    }
-    @media (any-hover: hover) {
-        &:hover {
-            background-color: #9e9e9e;
-            color: #fff;
-            &::before {
-                color: #fff;
-            }
-        }
-    }
-    @media (min-width: $mobile) {
-        border-top: rem(1) solid $lightGrayColor;
-        background-color: #f2f2f2;
-    }
-    @media (max-width: $mobile) {
-        font-size: rem(18);
-    }
-}
+
 .footer {
     &__btn {
         display: flex;
