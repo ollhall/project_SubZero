@@ -1,6 +1,9 @@
 import * as flsMob from "./modules/mobile.js";
 flsMob.isMob();
 
+import * as flsdynamicAdapt from "./modules/dynamic_adapt.js";
+flsdynamicAdapt.isdynamicAdapt();
+
 // import * as flsSlick from "./modules/slick.js";
 // flsSlick.isSlick();
 
@@ -16,8 +19,6 @@ flsHeaderScroll.isHeaderScroll();
 import * as flsWebp from "./modules/webp.js";
 flsWebp.isWebp();
 
-import * as flsdynamicAdapt from "./modules/dynamic_adapt.js";
-flsdynamicAdapt.isdynamicAdapt();
 
 // import * as flsAnchor from "./modules/anchor.js";
 // flsAnchor.isAnchor();
@@ -25,11 +26,11 @@ flsdynamicAdapt.isdynamicAdapt();
 // import * as flsSpoller from './modules/spoller.js'
 // flsSpoller.isSpoller()
 
-// import * as flsSpollers from "./modules/spollers.js";
-// flsSpollers.isSpollers();
+import * as flsSpollers from "./modules/spollers.js";
+flsSpollers.isSpollers();
 
-import * as flsAriaExpanded from './modules/aria-expanded.js'
-flsAriaExpanded.isAriaExpanded()
+// import * as flsAriaExpanded from './modules/aria-expanded.js'
+// flsAriaExpanded.isAriaExpanded()
 
 // import * as flsSearch from './modules/search.js'
 // flsSearch.isSearch()

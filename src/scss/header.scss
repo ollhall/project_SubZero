@@ -60,6 +60,7 @@
             font-size: rem(15);
         }
         @media (max-width: $mobile) {
+            position: relative;
             max-width: rem(315);
             width: 100%;
             height: rem(55);
@@ -105,12 +106,12 @@
     .header__phone,
     .header__service-btn {
         display: none;
-        transition: opacity 0.3s ease-in-out;
     }
 
-    .header__phone.loaded,
-    .header__service-btn.loaded {
-        display: flex;
+    .show {
+        &_btn {
+            display: flex;
+        }
     }
 }
 
@@ -194,12 +195,6 @@
         color: $blackColor;
         font-weight: 600;
         transition: all 0.3s ease 0s;
-        @media (any-hover: hover) {
-            &:hover {
-                background-color: $blueColor;
-                color: #fff;
-            }
-        }
 
         @media (min-width: $mobile) {
             display: flex;
@@ -219,49 +214,74 @@
                 bottom: 0;
                 width: 100%;
             }
+            @media (any-hover: hover) {
+                &:hover {
+                    background-color: $blueColor;
+                    color: #fff;
+                }
+            }
         }
-        &.active .spoller__title::before {
-            transform: rotate(90deg);
-        }
+
         @media (max-width: $mobile) {
             max-width: rem(315);
             width: 100%;
             font-size: rem(23);
             font-weight: 600;
         }
-        &.active .spoller__list {
-            display: grid;
-        }
-        @media (any-hover: hover) {
-            &:hover {
-                .spoller__list {
+    }
+
+    &__sub-list {
+        li {
+            font-size: rem(16);
+            font-weight: 400;
+            border-top: 1px solid transparent;
+            border-bottom: 1px solid transparent;
+            &:not(:last-child) {
+                @media (any-hover: hover) {
+                    &:hover {
+                        border-top: 1px solid #9e9e9e;
+                        border-bottom: 1px solid #9e9e9e;
+                        background-color: #f2f2f2;
+                    }
+                }
+            }
+            &:last-child {
+                position: relative;
+                display: flex;
+                flex-direction: row-reverse;
+                align-items: center;
+                justify-content: center;
+                &::before {
+                    content: "\e904";
+                    @extend %ic;
                     display: block;
-                }
-                &:focus {
-                    .spoller__list {
-                        display: block;
+                    margin-left: rem(5);
+                    font-size: rem(10);
+                    @media (max-width: $mobile) {
+                        padding-top: rem(3);
                     }
                 }
-                &:focus-within {
-                    .spoller__list {
-                        display: block;
-                    }
+                @media (min-width: $mobile) {
+                    color: $mainColor;
+                    background-color: #f2f2f2;
+                    border-top: 1px solid #9e9e9e;
                 }
             }
-        }
-    }
-    &__item:first-child {
-        .spoller__title {
-            &::before {
-                font-size: 0;
+            @media (min-width: $mobile) {
+                a {
+                    line-height: 250%;
+                }
+            }
+            @media (max-width: $mobile) {
+                font-size: rem(20);
             }
         }
-    }
-    &__item:last-child {
-        .spoller__title {
-            &::before {
-                font-size: 0;
-            }
+
+        @media (max-width: $mobile) {
+            display: grid;
+            gap: rem(40);
+            text-align: center;
+            margin-top: rem(68);
         }
     }
 }
@@ -272,7 +292,7 @@
     }
 }
 
-.spoller {
+.spollers-menu {
     &__title {
         position: relative;
         display: flex;
@@ -283,102 +303,32 @@
             margin-left: rem(8);
             transition: transform 0.3s ease 0s;
         }
-
-        @media (max-width: $mobile) {
-            justify-content: center;
-        }
-    }
-    &__list {
-        display: none;
-        color: $blackColor;
-        font-size: rem(16);
-        font-weight: 400;
-        line-height: normal;
-        z-index: 2;
-        @media (min-width: $mobile) {
-            position: absolute;
-            border: rem(1) solid $lightGrayColor;
-            background-color: #fff;
-            left: rem(0);
-            right: 0;
-            top: 100%;
-            z-index: 5;
-        }
-        @media (max-width: $mobile) {
-            gap: rem(40);
-            text-align: center;
-            margin-top: rem(68);
+        &._spoller-active {
+            &::before {
+                transform: rotate(-90deg);
+            }
         }
     }
     &__item {
-        color: $blackColor;
-        line-height: normal;
-        border-top: 1px solid transparent;
-        border-bottom: 1px solid transparent;
-        transition: all 0.3s ease 0s;
-
         @media (max-width: $mobile) {
-            font-size: rem(18);
-        }
-        &:not(:last-child) {
-            @media (any-hover: hover) {
-                &:hover {
-                    border-top: 1px solid #9e9e9e;
-                    border-bottom: 1px solid #9e9e9e;
-                    background: #f2f2f2;
-                }
-            }
-        }
-    }
-    &__item:last-child {
-        .spoller__link {
-            position: relative;
-            width: 100%;
-            height: rem(40);
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            flex-direction: row-reverse;
-            color: $mainColor;
-            transition: all 0.3s ease 0s;
-            &::before {
-                font-size: rem(10);
-                margin-left: rem(8);
-            }
-            @media (max-width: $mobile) {
-                &::before {
-                    padding-top: rem(3);
-                }
-            }
-        }
-        @media (any-hover: hover) {
-            &:hover {
-                background-color: $lightGrayColor;
-                .spoller__link {
-                    color: #fff;
-                }
-            }
-        }
-        @media (min-width: $mobile) {
-            border-top: rem(1) solid $lightGrayColor;
-            background-color: #f2f2f2;
-        }
-        @media (max-width: $mobile) {
-            font-size: rem(18);
         }
     }
-    &__link {
-        &::before {
-            font-size: 0;
-        }
+    &__body {
         @media (min-width: $mobile) {
-            display: block;
-            width: 100%;
-            padding: rem(13) rem(0);
+            position: absolute;
+            left: rem(0);
+            right: 0;
+            top: 100%;
+            color: $blackColor;
+            background-color: #fff;
+            border: rem(1) solid $lightGrayColor;
+            z-index: 5;
         }
     }
 }
-
 //=============================================================
 // Burger
 

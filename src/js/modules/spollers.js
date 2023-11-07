@@ -1,7 +1,7 @@
 export function isSpollers() {
   // Spollers
 
-    const spollersArray = document.querySelectorAll("[data-spollers]");
+  const spollersArray = document.querySelectorAll("[data-spollers]");
   if (spollersArray.length > 0) {
     // Получение обычных спойлеров
     const spollersRegular = Array.from(spollersArray).filter(function (
@@ -156,8 +156,6 @@ export function isSpollers() {
     }
   });
 
-
-
   // =================================================================================
   // SlideToggle
   let _slideUp = (target, duration = 500) => {
@@ -248,4 +246,5 @@ export function isSpollers() {
   //   })
 
   // }
+
 }
